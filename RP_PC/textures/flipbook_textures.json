@@ -1,0 +1,8 @@
+[
+	{
+		"flipbook_texture": "textures/mco/santa/blocks/fireplace/lit",
+		"atlas_tile": "mco_santa:fireplace.lit",
+		"atlas_index": 0,
+		"ticks_per_frame": 6
+	}
+]

@@ -1,0 +1,18 @@
+
+## --------------------------------------- ##
+
+## Pack Information
+
+pack.name=Project Claus
+pack.description=A funny, jolly little guy,
+
+## --------------------------------------- ##
+
+## Tiles ##
+tile.mco_santa:fireplace.name=Fireplace Block
+
+## Items ##
+
+## Entities ##
+
+## UI ##

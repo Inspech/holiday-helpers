@@ -1,0 +1,159 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "mco_santa:fireplace",
+            "menu_category": { "category": "construction" },
+
+            "traits": { "minecraft:placement_direction": { "enabled_states": [ "minecraft:cardinal_direction" ] } },
+            "states": {
+                "mco_santa:block.is_lit": [ false, true ],
+                "mco_santa:fireplace.has_firewood": [ false, true ]
+            }
+        },
+
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:map_color": "#9b5643",
+
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "render_method": "opaque",
+                    "texture": "mco_santa:fireplace.front.empty"
+                },
+
+                "*": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "render_method": "opaque",
+                    "texture": "mco_santa:fireplace.sides"
+                },
+
+                "up": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "render_method": "opaque",
+                    "texture": "smooth_stone_slab_top"
+                },
+                "down": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "render_method": "opaque",
+                    "texture": "brick"
+                }
+            },
+
+            "minecraft:custom_components": [ "mco_santa:fireplace.firewood_interaction" ],
+
+            "tag:minecraft:is_pickaxe_item_destructible": { },
+            "tag:stone": { },
+
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 5 },
+            "minecraft:destructible_by_explosion": { "explosion_resistance": 6 },
+
+            "minecraft:redstone_conductivity": { "redstone_conductor": true }
+        },
+
+        "permutations": [
+            // Filled State //
+            {
+                "condition": "query.block_state('mco_santa:fireplace.has_firewood')",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "render_method": "opaque",
+                            "texture": "mco_santa:fireplace.front.full"
+                        },
+
+                        "*": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "render_method": "opaque",
+                            "texture": "mco_santa:fireplace.sides"
+                        },
+
+                        "up": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "render_method": "opaque",
+                            "texture": "smooth_stone_slab_top"
+                        },
+                        "down": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "render_method": "opaque",
+                            "texture": "brick"
+                        }
+                    },
+
+                    "minecraft:custom_components": [
+                        "mco_santa:fireplace.firewood_interaction",
+                        "mco_santa:fireplace.ignition_interaction"
+                    ]
+                }
+            },
+
+            // Lit State //
+            {
+                "condition": "query.block_state('mco_santa:block.is_lit')",
+                "components": {
+                    "minecraft:light_emission": 15,
+
+                    "minecraft:material_instances": {
+                        "north": {
+                            "ambient_occlusion": false, "face_dimming": false,
+                            "render_method": "opaque",
+                            "texture": "mco_santa:fireplace.front.lit"
+                        },
+
+                        "*": {
+                            "ambient_occlusion": false, "face_dimming": false,
+                            "render_method": "opaque",
+                            "texture": "mco_santa:fireplace.sides"
+                        },
+
+                        "up": {
+                            "ambient_occlusion": false, "face_dimming": false,
+                            "render_method": "opaque",
+                            "texture": "smooth_stone_slab_top"
+                        },
+                        "down": {
+                            "ambient_occlusion": false, "face_dimming": false,
+                            "render_method": "opaque",
+                            "texture": "brick"
+                        }
+                    },
+
+                    "minecraft:tick": { "interval_range": [ 1, 9 ], "looping": true },
+                    "minecraft:custom_components": [
+                        "mco_santa:fireplace.ignition_interaction",
+                        "mco_santa:fireplace.ticking"
+                    ]
+                }
+            },
+
+            // Direction and Orientation States //
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [ 0, 180, 0 ] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [ 0, 90, 0 ] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [ 0, 270, 0 ] }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [ 0, 0, 0 ] }
+                }
+            }
+        ]
+    }
+}
