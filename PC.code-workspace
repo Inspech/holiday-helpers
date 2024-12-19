@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../MCBESwitcher+/Profiles/MushCo/development_behavior_packs/BP_PC",
+			"name": "Server Assets"
+		},
+		{
+			"path": "../../../../../../MCBESwitcher+/Profiles/MushCo/development_resource_packs/RP_PC",
+			"name": "Client Assets"
+		},
+		{ "path": "." }
+	],
+	"settings": { }
+}

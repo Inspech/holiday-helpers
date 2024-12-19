@@ -1,0 +1,29 @@
+{
+	"format_version": 2,
+	"metadata": { "authors": [ "Mush Co", "Sumiko Yanagi" ], "license": "All rights reserved." },
+
+	"header": {
+		"uuid": "776230e4-9550-4ebc-8d50-247b1e9a7316", "version": "0.1.0",
+		"name": "pack.name", "description": "pack.description",
+		"min_engine_version": [ 1, 21, 50 ]
+	},
+
+	"modules": [
+		{
+			"uuid": "9a6bbc20-590f-44d0-a8f0-e5f12de1fef7", "version": "0.1.0",
+			"type": "data",
+			"description": "pack.modules.behaviors.description"
+		},
+		{
+			"uuid": "930b84fe-d996-4cb0-bbfc-a4802def8755", "version": "0.1.0",
+			"type": "script",
+			"description": "pack.modules.scripts.description",
+			"entry": "scripts/mco/santa/index.js"
+		}
+	],
+
+	"dependencies": [
+		{ "uuid": "4b02e4b6-1de7-4bbb-9799-321c605e06e1", "version": "0.1.0" },
+		{ "module_name": "@minecraft/server", "version": "1.16.0" }
+	]
+}
