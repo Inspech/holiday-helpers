@@ -1,6 +1,6 @@
-import { world, system, BlockPermutation, EntityComponentTypes } from "@minecraft/server"
+import { world, system, BlockPermutation, EntityComponentTypes, GameMode } from "@minecraft/server"
 
-import { decrementStack, getPlayerItem } from "../../0utilities/playerFunctions"
+import { decrementStack, getPlayerCardinalFacing, getPlayerItem } from "../../0utilities/playerFunctions"
 import { warnDevelopersInChat } from "../../0utilities/debug"
 
 import { fireplaceBlockConfig, firewoodFuelItems } from "../0config/blocks/fireplace"
@@ -67,7 +67,6 @@ world.beforeEvents.worldInitialize.subscribe(
                 }
             }
         )
-
         blockComponentRegistry.registerCustomComponent(
             "mco_santa:fireplace.ticking",
             {
@@ -75,6 +74,28 @@ world.beforeEvents.worldInitialize.subscribe(
                     const block = event.block, blockDimension = block.dimension, blockLocation = block.location
 
                     warnDevelopersInChat('Semi-Random Fireplace Tick event!', blockDimension)
+                }
+            }
+        )
+        blockComponentRegistry.registerCustomComponent(
+            "mco_santa:fireplace.placement",
+            {
+                beforeOnPlayerPlace(event) {
+                    const block = event.block, player = event.player
+                    const playerGamemode = player.getGameMode()
+
+                    let hasFirewood = false
+                    if (playerGamemode == GameMode.creative) hasFirewood = true
+
+                    block.setPermutation(
+                        BlockPermutation.resolve(
+                            fireplaceBlockConfig.blockID, {
+                            [fireplaceBlockConfig.blockRotationalState]: getPlayerCardinalFacing(player),
+                            [fireplaceBlockConfig.blockHasFirewoodState]: hasFirewood
+                        })
+                    )
+
+                    event.permutationToPlace = block.permutation
                 }
             }
         )
