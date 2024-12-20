@@ -1,8 +1,11 @@
 
 /** General settings and configurations for the Fireplace block */
 export const fireplaceBlockConfig = {
+    blockID: 'mco_santa:fireplace',
+
     blockHasFirewoodState: 'mco_santa:fireplace.has_firewood',
     blockIsLitState: 'mco_santa:block.is_lit',
+    blockRotationalState: 'minecraft:cardinal_direction',
 
     removedItemSFX: 'random.pop',
     placedItemSFX: 'random.pop',
