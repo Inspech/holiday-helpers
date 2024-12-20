@@ -1,0 +1,28 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "mco_santa:mini_santa": {
+                "volume": 1.0, "pitch": [ 0.80, 1.20 ],
+                "events": {
+                    "hurt": "mob.armadillo.hurt",
+                    "death": {
+                        "sound": "mob.armadillo.death",
+                        "volume": 1.0, "pitch": [ 0.5, 0.7 ]
+                    },
+
+                    "spawn": {
+                        "sound": "mob.witch.celebrate",
+                        "volume": 1.0, "pitch": [ 1.25, 1.5 ]
+                    },
+                    "ambient": {
+                        "sound": "mob.witch.celebrate",
+                        "volume": 1.0, "pitch": [ 1.25, 1.5 ]
+                    },
+
+                    "eat": "mob.armadillo.eat",
+                    "step": "mob.armadillo.step"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mco_santa:mini_santa",
+
+            "render_controllers": [ "controller.render.mco_santa.mini_santa" ],
+
+            "geometry": { "default": "geometry.mco_santa.mini_santa" },
+            "textures": { "default": "textures/mco/santa/entity/mini_santa" },
+            "materials": { "default": "entity_alphatest" },
+
+            "spawn_egg": { "texture": "mco_santa:spawn_egg", "texture_index": 0 },
+
+            "scripts": {
+                "animate": [ "ctrl.movement" ]
+            },
+
+            "animations": {
+                "ctrl.movement": "controller.animation.mco_santa.mini_santa.movement",
+
+                "anim.walk": "animation.mco_santa.mini_santa.walk",
+                "anim.idle": "animation.mco_santa.mini_santa.idle"
+            }
+        }
+    }
+}

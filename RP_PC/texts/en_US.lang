@@ -2,7 +2,6 @@
 ## --------------------------------------- ##
 
 ## Pack Information
-
 pack.name=Project Claus
 pack.description=A funny, jolly little guy,
 
@@ -12,7 +11,9 @@ pack.description=A funny, jolly little guy,
 tile.mco_santa:fireplace.name=Fireplace Block
 
 ## Items ##
+item.spawn_egg.entity.mco_santa:mini_santa.name=Mini Santa Spawn Egg
 
 ## Entities ##
+entity.mco_santa:mini_santa.name=Mini Santa
 
 ## UI ##

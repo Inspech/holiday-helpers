@@ -1,0 +1,31 @@
+{
+	"format_version": "1.21.50",
+
+	"animation_controllers": {
+		"controller.animation.mco_santa.mini_santa.movement": {
+			"initial_state": "default",
+
+			"states": {
+
+				"default": {
+					"animations": [ "anim.idle" ],
+
+					"blend_transition": 0.125,
+					"transitions": [
+						{ "walking": "query.ground_speed > 0.125" }
+					]
+				},
+
+				"walking": {
+					"animations": [ "anim.walk" ],
+
+					"blend_transition": 0.33,
+					"transitions": [
+						{ "default": "query.ground_speed == 0.0" }
+					]
+				}
+
+			}
+		}
+	}
+}

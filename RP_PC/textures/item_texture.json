@@ -1,0 +1,14 @@
+{
+    "resource_pack_name": "mco_santa",
+    "texture_name": "atlas.items",
+
+    "texture_data": {
+
+        "mco_santa:spawn_egg": {
+            "textures": [
+                "textures/mco/santa/items/spawn_eggs/mini_santa"
+            ]
+        }
+
+    }
+}

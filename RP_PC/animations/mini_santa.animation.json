@@ -1,0 +1,79 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mco_santa.mini_santa.idle": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [ "math.Sin(query.anim_time * 38.17) * -3", 0, 0 ],
+					"position": [ 0, "math.Cos(query.anim_time * 38.17) * -0.25", 0 ]
+				},
+				"jacket": {
+					"scale": "1.018 + (math.Sin(query.anim_time * 38.17) * 0.018)"
+				},
+				"leftArm": {
+					"rotation": [ 0, 0, "math.Sin(query.anim_time * 38.17) * -10" ]
+				},
+				"rightArm": {
+					"rotation": [ 0, 0, "math.Sin(query.anim_time * 38.17) * 10" ]
+				},
+				"head": {
+					"rotation": [ "math.Sin(query.anim_time * 38.17) * 2", 0, 0 ]
+				}
+			}
+		},
+		"animation.mco_santa.mini_santa.idle2": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [ "math.Cos(query.anim_time * 360) * -3", 0, "math.Sin(query.anim_time * 360) * -3" ],
+					"position": [ 0, "math.Cos(query.anim_time * 720) * -0.25", "math.Cos(query.anim_time * 360) * -0.25" ]
+				}
+			}
+		},
+		"animation.mco_santa.mini_santa.walk": {
+			"loop": true,
+			"animation_length": 1,
+			"anim_time_update": "query.anim_time + (1.6 - math.pow(1.6, 1.0 - 10.0 * query.modified_move_speed)) * query.delta_time",
+			"bones": {
+				"body": {
+					"rotation": [ "math.Cos(query.anim_time * 360) * -3", 0, "math.Sin(query.anim_time * 360) * -3" ],
+					"position": [ 0, "math.Cos(query.anim_time * 720) * -0.25", "math.Cos(query.anim_time * 360) * -0.25" ]
+				},
+				"leftArm": {
+					"rotation": [ 0, 0, "math.cos(query.anim_time * 360) * 15" ]
+				},
+				"leftLeg": {
+					"rotation": [ "math.Sin(query.anim_time * 720) * -16", 0, 0 ],
+					"position": [ 0, 0, 0 ]
+				},
+				"head": {
+					"rotation": [ 0, "math.Sin(query.anim_time * 360) * -5", 0 ],
+					"position": [ 0, "math.Cos(query.anim_time * 720) * -0.25", "math.Cos(query.anim_time * 360) * -0.25" ]
+				},
+				"ball": {
+					"rotation": {
+						"0.0": [ 0, "math.Cos(query.anim_time * 720) * -3", 3.5 ],
+						"0.12": [ 0, "math.Cos(query.anim_time * 720) * -3", 12.5 ],
+						"0.2": [ 0, "math.Cos(query.anim_time * 720) * -3", 13.5 ],
+						"0.28": [ 0, "math.Cos(query.anim_time * 720) * -3", 13.5 ],
+						"0.36": [ 0, "math.Cos(query.anim_time * 720) * -3", 10.5 ],
+						"0.48": [ 0, "math.Cos(query.anim_time * 720) * -3", 3.5 ],
+						"0.64": [ 0, "math.Cos(query.anim_time * 720) * -3", 12.5 ],
+						"0.72": [ 0, "math.Cos(query.anim_time * 720) * -3", 13.5 ],
+						"0.8": [ 0, "math.Cos(query.anim_time * 720) * -3", 13.5 ],
+						"0.88": [ 0, "math.Cos(query.anim_time * 720) * -3", 10.5 ],
+						"1.0": [ 0, "math.Cos(query.anim_time * 720) * -3", 3.5 ]
+					},
+					"position": [ 0, "math.Cos(query.anim_time * 720) * -0.15", 0 ]
+				},
+				"rightArm": {
+					"rotation": [ 0, 0, "math.Sin(query.anim_time * 360) * -15" ]
+				},
+				"rightLeg": {
+					"rotation": [ "math.sin(query.anim_time * 720) * 16", 0, 0 ]
+				}
+			}
+		}
+	}
+}
