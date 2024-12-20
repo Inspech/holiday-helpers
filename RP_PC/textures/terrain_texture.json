@@ -4,7 +4,11 @@
     "padding": 8, "num_mip_levels": 4,
 
     "texture_data": {
-        "mco_santa:fireplace.sides": { "textures": "textures/mco/santa/blocks/fireplace/sides" },
+        "mco_santa:fireplace.top.mirrored": { "textures": "textures/mco/santa/blocks/fireplace/top.mirrored" },
+        "mco_santa:fireplace.top": { "textures": "textures/mco/santa/blocks/fireplace/top" },
+
+        "mco_santa:fireplace.side.east": { "textures": "textures/mco/santa/blocks/fireplace/side.east" },
+        "mco_santa:fireplace.side.west": { "textures": "textures/mco/santa/blocks/fireplace/side.west" },
 
         "mco_santa:fireplace.front.empty": { "textures": "textures/mco/santa/blocks/fireplace/front.empty" },
         "mco_santa:fireplace.front.full": { "textures": "textures/mco/santa/blocks/fireplace/front.full" },

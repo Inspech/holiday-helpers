@@ -5,7 +5,12 @@
             "identifier": "mco_santa:fireplace",
             "menu_category": { "category": "construction" },
 
-            "traits": { "minecraft:placement_direction": { "enabled_states": [ "minecraft:cardinal_direction" ] } },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [ "minecraft:cardinal_direction" ],
+                    "y_rotation_offset": 0
+                }
+            },
             "states": {
                 "mco_santa:block.is_lit": [ false, true ],
                 "mco_santa:fireplace.has_firewood": [ false, true ]
@@ -18,31 +23,22 @@
 
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
-                "north": {
-                    "ambient_occlusion": true, "face_dimming": true,
-                    "render_method": "opaque",
-                    "texture": "mco_santa:fireplace.front.empty"
-                },
+                "north": { "texture": "mco_santa:fireplace.front.empty" },
 
                 "*": {
                     "ambient_occlusion": true, "face_dimming": true,
-                    "render_method": "opaque",
-                    "texture": "mco_santa:fireplace.sides"
+                    "texture": "brick", "render_method": "opaque"
                 },
 
-                "up": {
-                    "ambient_occlusion": true, "face_dimming": true,
-                    "render_method": "opaque",
-                    "texture": "smooth_stone_slab_top"
-                },
-                "down": {
-                    "ambient_occlusion": true, "face_dimming": true,
-                    "render_method": "opaque",
-                    "texture": "brick"
-                }
+                "east": { "texture": "mco_santa:fireplace.side.east" },
+                "west": { "texture": "mco_santa:fireplace.side.west" },
+                "up": { "texture": "mco_santa:fireplace.top" }
             },
 
-            "minecraft:custom_components": [ "mco_santa:fireplace.firewood_interaction" ],
+            "minecraft:custom_components": [
+                "mco_santa:fireplace.firewood_interaction",
+                "mco_santa:fireplace.placement"
+            ],
 
             "tag:minecraft:is_pickaxe_item_destructible": { },
             "tag:stone": { },
@@ -50,7 +46,23 @@
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 5 },
             "minecraft:destructible_by_explosion": { "explosion_resistance": 6 },
 
-            "minecraft:redstone_conductivity": { "redstone_conductor": true }
+            "minecraft:redstone_conductivity": { "redstone_conductor": true },
+
+            "minecraft:item_visual": {
+                "geometry": "minecraft:geometry.full_block",
+                "material_instances": {
+                    "south": { "texture": "mco_santa:fireplace.front.empty" },
+
+                    "*": {
+                        "ambient_occlusion": true, "face_dimming": true,
+                        "texture": "brick", "render_method": "opaque"
+                    },
+
+                    "west": { "texture": "mco_santa:fireplace.side.east" },
+                    "east": { "texture": "mco_santa:fireplace.side.west" },
+                    "up": { "texture": "mco_santa:fireplace.top.mirrored" }
+                }
+            }
         },
 
         "permutations": [
@@ -59,28 +71,16 @@
                 "condition": "query.block_state('mco_santa:fireplace.has_firewood')",
                 "components": {
                     "minecraft:material_instances": {
-                        "north": {
-                            "ambient_occlusion": true, "face_dimming": true,
-                            "render_method": "opaque",
-                            "texture": "mco_santa:fireplace.front.full"
-                        },
+                        "north": { "texture": "mco_santa:fireplace.front.full" },
 
                         "*": {
                             "ambient_occlusion": true, "face_dimming": true,
-                            "render_method": "opaque",
-                            "texture": "mco_santa:fireplace.sides"
+                            "texture": "brick", "render_method": "opaque"
                         },
 
-                        "up": {
-                            "ambient_occlusion": true, "face_dimming": true,
-                            "render_method": "opaque",
-                            "texture": "smooth_stone_slab_top"
-                        },
-                        "down": {
-                            "ambient_occlusion": true, "face_dimming": true,
-                            "render_method": "opaque",
-                            "texture": "brick"
-                        }
+                        "east": { "texture": "mco_santa:fireplace.side.east" },
+                        "west": { "texture": "mco_santa:fireplace.side.west" },
+                        "up": { "texture": "mco_santa:fireplace.top" }
                     },
 
                     "minecraft:custom_components": [
@@ -99,29 +99,20 @@
                     "minecraft:material_instances": {
                         "north": {
                             "ambient_occlusion": false, "face_dimming": false,
-                            "render_method": "opaque",
                             "texture": "mco_santa:fireplace.front.lit"
                         },
 
                         "*": {
-                            "ambient_occlusion": false, "face_dimming": false,
-                            "render_method": "opaque",
-                            "texture": "mco_santa:fireplace.sides"
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "texture": "brick", "render_method": "opaque"
                         },
 
-                        "up": {
-                            "ambient_occlusion": false, "face_dimming": false,
-                            "render_method": "opaque",
-                            "texture": "smooth_stone_slab_top"
-                        },
-                        "down": {
-                            "ambient_occlusion": false, "face_dimming": false,
-                            "render_method": "opaque",
-                            "texture": "brick"
-                        }
+                        "east": { "texture": "mco_santa:fireplace.side.east" },
+                        "west": { "texture": "mco_santa:fireplace.side.west" },
+                        "up": { "texture": "mco_santa:fireplace.top" }
                     },
 
-                    "minecraft:tick": { "interval_range": [ 1, 9 ], "looping": true },
+                    "minecraft:tick": { "interval_range": [ 20, 180 ], "looping": true },
                     "minecraft:custom_components": [
                         "mco_santa:fireplace.ignition_interaction",
                         "mco_santa:fireplace.ticking"
