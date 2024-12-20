@@ -21,3 +21,26 @@ export function decrementStack(player) {
 
     playerEquipmentComponent.setEquipment(EquipmentSlot.Mainhand, newItemStack);
 }
+
+/** Gets the Player's cardinal facing direction 
+ * @param {Player} player */
+export function getPlayerCardinalFacing(player) {
+    const yRotation = player.getRotation().y
+
+    let facingDirectionCardinal
+    switch (true) {
+        // Facing North
+        case yRotation <= -135 || yRotation > 135:
+            facingDirectionCardinal = 'north'; break
+        // Facing East
+        case yRotation > -135 && yRotation <= -45:
+            facingDirectionCardinal = 'east'; break
+        // Facing South
+        case yRotation > -45 && yRotation <= 45:
+            facingDirectionCardinal = 'south'; break
+        // Facing West
+        default: facingDirectionCardinal = 'west'; break
+    }
+
+    return facingDirectionCardinal
+}
