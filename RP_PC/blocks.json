@@ -3,5 +3,6 @@
 
     // ------------------------ //
 
-    "mco_santa:fireplace": { "sound": "nether_brick" }
+    "mco_santa:fireplace": { "sound": "nether_brick" },
+    "mco_santa:chimney": { "sound": "nether_brick" }
 }

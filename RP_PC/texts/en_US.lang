@@ -9,6 +9,7 @@ pack.description=A funny, jolly little guy,
 
 ## Tiles ##
 tile.mco_santa:fireplace.name=Fireplace Block
+tile.mco_santa:chimney.name=Chimney Block
 
 ## Items ##
 item.spawn_egg.entity.mco_santa:mini_santa.name=Mini Santa Spawn Egg

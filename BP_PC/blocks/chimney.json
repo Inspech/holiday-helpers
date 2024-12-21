@@ -1,0 +1,80 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "mco_santa:chimney",
+            "menu_category": { "category": "construction" },
+
+            "states": {
+                "mco_santa:block.is_lit": [ false, true ],
+                "mco_santa:chimney.shape": [ "column", "full", "top" ]
+            }
+        },
+
+        "components": {
+            "minecraft:light_dampening": 0,
+            "minecraft:map_color": "#945325",
+
+            "minecraft:geometry": "geometry.mco_santa.chimney.column",
+            "minecraft:material_instances": {
+                "down": { "texture": "mco_santa:fireplace.bricks" },
+                "*": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "texture": "mco_santa:chimney", "render_method": "opaque"
+                }
+            },
+
+            "minecraft:custom_components": [ "mco_santa:chimney.placement" ],
+
+            "tag:minecraft:is_pickaxe_item_destructible": { },
+            "tag:stone": { },
+
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 5 },
+            "minecraft:destructible_by_explosion": { "explosion_resistance": 6 },
+
+            "minecraft:redstone_conductivity": { "redstone_conductor": false }
+        },
+
+        "permutations": [
+            // Shape Configuration States //
+            {
+                "condition": "query.block_state('mco_santa:chimney.shape') == 'full'",
+                "components": {
+                    "minecraft:light_dampening": 15,
+
+                    "minecraft:geometry": "geometry.mco_santa.chimney.column",
+                    "minecraft:material_instances": {
+                        "down": { "texture": "mco_santa:fireplace.bricks" },
+                        "*": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "texture": "mco_santa:chimney", "render_method": "opaque"
+                        }
+                    },
+
+                    "minecraft:redstone_conductivity": { "redstone_conductor": true }
+                }
+            },
+            {
+                "condition": "query.block_state('mco_santa:chimney.shape') == 'top'",
+                "components": {
+                    "minecraft:geometry": "geometry.mco_santa.chimney.top",
+                    "minecraft:material_instances": {
+                        "down": { "texture": "mco_santa:fireplace.bricks" },
+                        "*": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "texture": "mco_santa:chimney", "render_method": "opaque"
+                        }
+                    }
+                }
+            },
+
+            // Lit State //
+            {
+                "condition": "query.block_state('mco_santa:chimney.shape') == 'top' && query.block_state('mco_santa:block.is_lit')",
+                "components": {
+                    "minecraft:custom_components": [ "mco_santa:chimney.ticking" ]
+                }
+            }
+        ]
+    }
+}
