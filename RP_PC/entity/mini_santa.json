@@ -13,11 +13,16 @@
             "spawn_egg": { "texture": "mco_santa:spawn_egg", "texture_index": 0 },
 
             "scripts": {
+                "initialize": [ "variable.initialised = 0.0;" ],
+
+                "pre_animation": [ "variable.initialised = query.property('mco_santa:initialised');" ],
                 "animate": [ "ctrl.movement" ]
             },
 
             "animations": {
                 "ctrl.movement": "controller.animation.mco_santa.mini_santa.movement",
+
+                "anim.spawn_from_chimney": "animation.mco_santa.mini_santa.spawn_from_chimney",
 
                 "anim.walk": "animation.mco_santa.mini_santa.walk",
                 "anim.idle": "animation.mco_santa.mini_santa.idle"

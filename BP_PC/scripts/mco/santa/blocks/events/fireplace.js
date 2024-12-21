@@ -5,7 +5,8 @@ import { entityRotationFromBlockRotation } from "../../../0utilities/blockFuncti
 
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../../0config/blocks/chimney.js"
-import { warnDevelopersInChat } from "../../../0utilities/debug.js"
+import { santaEntityConfig } from "../../0config/entities/santa.js"
+
 import { checkForChimneyBlocks } from "../functions/fireplace.js"
 
 /** Emits a particle from the Fireplace locator
@@ -63,7 +64,7 @@ export function fireplaceGiveBirthToSanta(block, frontBlock, blockRotation) {
 
         // Ho ho ho!
         blockDimension.runCommand(
-            `summon mco_santa:mini_santa ${frontBlock.center().x} ${frontBlock.center().y} ${frontBlock.center().z} ${entityRotationFromBlockRotation(blockRotation)} 0`
+            `summon mco_santa:mini_santa ${frontBlock.center().x} ${frontBlock.center().y} ${frontBlock.center().z} ${entityRotationFromBlockRotation(blockRotation)} 0 ${santaEntityConfig.spawnedFromChimneyEvent}`
         )
 
         // Special effects

@@ -3,9 +3,23 @@
 
 	"animation_controllers": {
 		"controller.animation.mco_santa.mini_santa.movement": {
-			"initial_state": "default",
+			"initial_state": "preinitialisation",
 
 			"states": {
+				"preinitialisation": {
+					"transitions": [
+						{ "initialisation": "!variable.initialised" },
+						{ "default": "variable.initialised" }
+					]
+				},
+
+				"initialisation": {
+					"animations": [ "anim.spawn_from_chimney" ],
+					"blend_transition": 0.125,
+					"transitions": [
+						{ "default": "query.all_animations_finished" }
+					]
+				},
 
 				"default": {
 					"animations": [ "anim.idle" ],

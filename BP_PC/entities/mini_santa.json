@@ -3,7 +3,11 @@
     "minecraft:entity": {
         "description": {
             "identifier": "mco_santa:mini_santa",
-            "is_spawnable": true, "is_summonable": true
+            "is_spawnable": true, "is_summonable": true,
+
+            "properties": {
+                "mco_santa:initialised": { "client_sync": true, "default": false, "type": "bool" }
+            }
         },
 
         "components": {
@@ -105,8 +109,23 @@
 
         },
 
-        "component_groups": { },
+        "component_groups": {
+            "mini_santa:timer_to_initialise": {
+                "minecraft:timer": {
+                    "time": 0.125, "looping": true,
+                    "time_down_event": { "event": "example:foo", "target": "self" }
+                }
+            }
+        },
 
-        "events": { }
+        "events": {
+            "mco_santa:mini_santa.spawned_from_chimney": {
+                "add": { "component_groups": [ "mini_santa:timer_to_initialise" ] }
+            },
+
+            "mco_santa:mini_santa.set_initialised": {
+                "set_property": { "mco_santa:initialised": true }
+            }
+        }
     }
 }
