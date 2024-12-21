@@ -13,17 +13,17 @@ export const fireplaceBlockConfig = {
     blockRotationalState: 'minecraft:cardinal_direction',
 
     flameSFX: 'block.campfire.crackle',
-    removedItemSFX: 'random.pop',
-    placedItemSFX: 'random.pop',
-    douseSFX: 'random.pop',
-    litSFX: 'random.pop',
+    removedItemSFX: 'insert.chiseled_bookshelf',
+    placedItemSFX: 'pickup.chiseled_bookshelf',
+    douseSFX: 'random.fizz',
+    litSFX: 'fire.ignite', litSFX2: 'fire.fire',
+
+    santaSpawnSFX: 'pickup_enchanted.chiseled_bookshelf',
 
     flameVFX: 'minecraft:basic_flame_particle',
     smokeVFX: 'minecraft:basic_smoke_particle',
-    removedItemVFX: 'random.pop',
-    placedItemVFX: 'random.pop',
-    douseVFX: 'random.pop',
-    litVFX: 'random.pop',
+    douseVFX: 'minecraft:basic_smoke_particle',
+    litVFX: 'minecraft:basic_flame_particle',
 }
 
 /** This is the array of different items used to fuel a Fireplace block */

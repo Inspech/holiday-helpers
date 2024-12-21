@@ -1,4 +1,4 @@
-/** @import {BlockCustomComponentRegistration} from "../components.js" */
+/** @import {BlockCustomComponentRegistration} from "../index.js" */
 
 import minecraftmath from "../../../0utilities/minecraft-math/minecraft-math.js";
 const { Vector3Builder } = minecraftmath;
@@ -15,7 +15,7 @@ import {
 } from "../events/fireplace.js"
 
 
-/** Interaction component for when the Fireplace is empty 
+/** Ticking component for a lit Fireplace block 
  * @type {BlockCustomComponentRegistration} **/
 export default {
     ID: "mco_santa:fireplace.ticking",
@@ -58,16 +58,18 @@ export default {
         // Generate a random number, 1 - 100
         let randomNumber = getRandomNumber({ chanceOf: 100 })
 
+        // REVIEW - Maybe create a specialised function for a list of chances?
+
         // List of events to trigger
         switch (true) {
-            case randomNumber > 0 && randomNumber <= 31: // 31% Chance
+            case randomNumber > 0 && randomNumber <= 38: // % Chance
                 fireplaceEmitParticleEvent(block, blockParticleLocator, fireplaceBlockConfig.flameVFX); break
-            case randomNumber > 31 && randomNumber <= 62: // 31% Chance
+            case randomNumber > 38 && randomNumber <= 76: // % Chance
                 fireplaceEmitParticleEvent(block, blockParticleLocator, fireplaceBlockConfig.smokeVFX); break
-            case randomNumber > 62 && randomNumber <= 93: // 31% Chance
+            case randomNumber > 76 && randomNumber <= 96: // % Chance
                 fireplaceEmitSoundEvent(block, fireplaceBlockConfig.flameSFX); break
 
-            case randomNumber > 93: // 7% Chance
+            case randomNumber > 96: // % Chance
                 fireplaceGiveBirthToSanta(block, blockInFront, blockRotationState); break
         }
     }

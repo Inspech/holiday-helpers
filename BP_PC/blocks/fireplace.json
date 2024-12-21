@@ -75,7 +75,7 @@
 
                         "*": {
                             "ambient_occlusion": true, "face_dimming": true,
-                            "texture": "brick", "render_method": "opaque"
+                            "texture": "mco_santa:fireplace.bricks", "render_method": "opaque"
                         },
 
                         "east": { "texture": "mco_santa:fireplace.side.east" },
@@ -104,7 +104,7 @@
 
                         "*": {
                             "ambient_occlusion": true, "face_dimming": true,
-                            "texture": "brick", "render_method": "opaque"
+                            "texture": "mco_santa:fireplace.bricks", "render_method": "opaque"
                         },
 
                         "east": { "texture": "mco_santa:fireplace.side.east" },

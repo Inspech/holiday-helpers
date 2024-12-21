@@ -1,11 +1,11 @@
-/** @import {BlockCustomComponentRegistration} from "../components.js" */
+/** @import {BlockCustomComponentRegistration} from "../index.js" */
 
 import { BlockPermutation, GameMode } from "@minecraft/server"
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 
 import { getPlayerCardinalFacing } from "../../../0utilities/playerFunctions.js"
 
-/** Interaction component for when the Fireplace is empty 
+/** Special placement considerations for the Fireplace block
  * @type {BlockCustomComponentRegistration} **/
 export default {
     ID: "mco_santa:fireplace.placement",

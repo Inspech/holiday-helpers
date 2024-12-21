@@ -1,4 +1,4 @@
-/** @import {BlockCustomComponentRegistration} from "../components.js" */
+/** @import {BlockCustomComponentRegistration} from "../index.js" */
 
 import { getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
@@ -7,7 +7,7 @@ import { ignitionItems, extinguishItems } from "../../../0globalConfig/vanilla.j
 
 // TODO: Add item damage to the lighting of a Fireplace
 
-/** Interaction component for when the Fireplace is empty 
+/** Interaction component for when the Fireplace block is full of firewood 
  * @type {BlockCustomComponentRegistration} **/
 export default {
     ID: "mco_santa:fireplace.ignition_interaction",
@@ -24,6 +24,7 @@ export default {
             // Fireplace lighting
             case ignitionItems.includes(playerItem.typeId) && !blockIsLitState:
                 blockDimension.playSound(fireplaceBlockConfig.litSFX, blockLocation)
+                blockDimension.playSound(fireplaceBlockConfig.litSFX2, blockLocation)
                 block.setPermutation(blockPermutation.withState(
                     fireplaceBlockConfig.blockIsLitState, true
                 )); break

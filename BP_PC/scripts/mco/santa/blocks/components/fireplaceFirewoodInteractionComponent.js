@@ -1,9 +1,9 @@
-/** @import {BlockCustomComponentRegistration} from "../components.js" */
+/** @import {BlockCustomComponentRegistration} from "../index.js" */
 
 import { decrementStack, getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig, firewoodFuelItems } from "../../0config/blocks/fireplace.js"
 
-/** Interaction component for when the Fireplace is empty 
+/** Interaction component for when the Fireplace block is empty 
  * @type {BlockCustomComponentRegistration} **/
 export default {
     ID: "mco_santa:fireplace.firewood_interaction",
