@@ -4,6 +4,9 @@
     "padding": 8, "num_mip_levels": 4,
 
     "texture_data": {
+        // Fireplace
+        "mco_santa:fireplace.bricks": { "textures": "textures/mco/santa/blocks/fireplace/bricks" },
+
         "mco_santa:fireplace.top.mirrored": { "textures": "textures/mco/santa/blocks/fireplace/top.mirrored" },
         "mco_santa:fireplace.top": { "textures": "textures/mco/santa/blocks/fireplace/top" },
 
@@ -12,6 +15,9 @@
 
         "mco_santa:fireplace.front.empty": { "textures": "textures/mco/santa/blocks/fireplace/front.empty" },
         "mco_santa:fireplace.front.full": { "textures": "textures/mco/santa/blocks/fireplace/front.full" },
-        "mco_santa:fireplace.front.lit": { "textures": "textures/mco/santa/blocks/fireplace/front.lit" }
+        "mco_santa:fireplace.front.lit": { "textures": "textures/mco/santa/blocks/fireplace/front.lit" },
+
+        // Chimney
+        "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" }
     }
 }
