@@ -1,5 +1,5 @@
 
 /** Usernames of active project developers */
-export const activeDevelopers = [
-    "yanasakana"
-]
+export const activeDevelopers = /** @type {const} */ (
+    ["yanasakana"]
+)

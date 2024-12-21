@@ -1,7 +1,6 @@
-/** @import {world, Block, Dimension, DimensionLocation} from "@minecraft/server" */
-import { EntityComponentTypes, EquipmentSlot } from "@minecraft/server";
-
+/** @import {Block, DimensionLocation} from "@minecraft/server" */
 import { entityRotationFromBlockRotation } from "../../../0utilities/blockFunctions"
+
 
 /** Emits a particle from the Fireplace locator
  * @param {Block} block * @param {DimensionLocation} locator */
