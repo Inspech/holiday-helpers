@@ -1,5 +1,5 @@
 /** @import {Dimension} from "@minecraft/server" */
-import { activeDevelopers } from "../0globalConfig/mush_co.js"
+import { activeDevelopers } from "../0data/mush_co.js"
 
 /** Sends private logging messages in chat to a whitelist of developers on the project
  * @param {Dimension} dimension * @param {String} message */

@@ -37,7 +37,9 @@
 
             "minecraft:custom_components": [
                 "mco_santa:fireplace.firewood_interaction",
-                "mco_santa:fireplace.placement"
+                "mco_santa:fireplace.placement",
+
+                "mco_santa:global.placement.sfx"
             ],
 
             "tag:minecraft:is_pickaxe_item_destructible": { },

@@ -3,6 +3,7 @@
 import { decrementStack, getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig, firewoodFuelItems } from "../../0config/blocks/fireplace.js"
 
+
 /** Interaction component for when the Fireplace block is empty 
  * @type {BlockCustomComponentRegistration} **/
 export default {

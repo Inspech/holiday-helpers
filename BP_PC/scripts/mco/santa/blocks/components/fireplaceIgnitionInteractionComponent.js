@@ -3,9 +3,10 @@
 import { getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 
-import { ignitionItems, extinguishItems } from "../../../0globalConfig/vanilla.js"
+import { ignitionItems, extinguishItems } from "../../../0data/vanilla.js"
 
 // TODO: Add item damage to the lighting of a Fireplace
+
 
 /** Interaction component for when the Fireplace block is full of firewood 
  * @type {BlockCustomComponentRegistration} **/

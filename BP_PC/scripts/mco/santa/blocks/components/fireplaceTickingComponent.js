@@ -5,7 +5,6 @@ const { Vector3Builder } = minecraftmath;
 
 import { getAdjacentBlock } from "../../../0utilities/blockFunctions.js"
 import { clampedRandom, getRandomNumber } from "../../../0utilities/math.js"
-import { warnDevelopersInChat } from "../../../0utilities/debug.js"
 
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 import {

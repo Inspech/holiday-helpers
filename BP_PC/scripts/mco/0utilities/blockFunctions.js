@@ -1,5 +1,7 @@
 /** @import {Block} from "@minecraft/server" */
 
+import { replaceableBlocks } from "../0data/vanilla";
+
 /** Retrieve any neighbouring block in a given direction 
  * @param {Block} block */
 export function getAdjacentBlock(adjacentDirection, { targetDistance = 1 }, originBlock, placementDirection, { directionType = 'cardinal' }) {
@@ -102,4 +104,17 @@ export function entityRotationFromBlockRotation(blockRotation) {
     }
 
     return entityRotation
+}
+
+/** Tests whether or not all blocks in each cardinal direction are solid
+ * @param {Block} block */
+export function allLateralNeighboursSolid(block) {
+    const directions = [block.north(), block.east(), block.south(), block.west()]
+
+    let solidBlocks = 0;
+    directions.forEach((direction) => {
+        if (replaceableBlocks.includes(direction.typeId)) return; solidBlocks++
+    })
+
+    if (solidBlocks == 4) return true; else return false
 }

@@ -18,6 +18,7 @@
         "mco_santa:fireplace.front.lit": { "textures": "textures/mco/santa/blocks/fireplace/front.lit" },
 
         // Chimney
-        "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" }
+        "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" },
+        "mco_santa:chimney.lit": { "textures": "textures/mco/santa/blocks/chimney.lit" }
     }
 }

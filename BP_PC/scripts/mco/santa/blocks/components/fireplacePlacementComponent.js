@@ -5,6 +5,7 @@ import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 
 import { getPlayerCardinalFacing } from "../../../0utilities/playerFunctions.js"
 
+
 /** Special placement considerations for the Fireplace block
  * @type {BlockCustomComponentRegistration} **/
 export default {

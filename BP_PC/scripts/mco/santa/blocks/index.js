@@ -8,12 +8,21 @@ import fireplaceIgnitionInteractionComponent from "./components/fireplaceIgnitio
 import fireplacePlacementComponent from "./components/fireplacePlacementComponent.js"
 import fireplaceTickingComponent from "./components/fireplaceTickingComponent.js"
 
+import chimneyPlacementComponent from "./components/chimneyPlacementComponent.js"
+
+import globalPlacementSFXComponent from "./components/globalPlacementSFXComponent.js"
+
 const customComponents = [
     fireplaceFirewoodInteractionComponent,
     fireplaceIgnitionInteractionComponent,
     fireplacePlacementComponent,
-    fireplaceTickingComponent
+    fireplaceTickingComponent,
+
+    chimneyPlacementComponent,
+
+    globalPlacementSFXComponent,
 ]
+
 
 world.beforeEvents.worldInitialize.subscribe(
     ({ blockComponentRegistry }) => {

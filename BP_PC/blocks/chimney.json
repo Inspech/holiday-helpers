@@ -24,7 +24,7 @@
                 }
             },
 
-            "minecraft:custom_components": [ "mco_santa:chimney.placement" ],
+            "minecraft:custom_components": [ "mco_santa:chimney.placement", "mco_santa:global.placement.sfx" ],
 
             "tag:minecraft:is_pickaxe_item_destructible": { },
             "tag:stone": { },
@@ -56,14 +56,8 @@
             {
                 "condition": "query.block_state('mco_santa:chimney.shape') == 'top'",
                 "components": {
-                    "minecraft:geometry": "geometry.mco_santa.chimney.top",
-                    "minecraft:material_instances": {
-                        "down": { "texture": "mco_santa:fireplace.bricks" },
-                        "*": {
-                            "ambient_occlusion": true, "face_dimming": true,
-                            "texture": "mco_santa:chimney", "render_method": "opaque"
-                        }
-                    }
+                    "minecraft:map_color": "#b0b0b0",
+                    "minecraft:geometry": "geometry.mco_santa.chimney.top"
                 }
             },
 
@@ -71,7 +65,16 @@
             {
                 "condition": "query.block_state('mco_santa:chimney.shape') == 'top' && query.block_state('mco_santa:block.is_lit')",
                 "components": {
-                    "minecraft:custom_components": [ "mco_santa:chimney.ticking" ]
+                    "minecraft:tick": { "interval_range": [ 60, 120 ], "looping": true },
+                    "minecraft:custom_components": [ "mco_santa:chimney.ticking" ],
+
+                    "minecraft:material_instances": {
+                        "down": { "texture": "mco_santa:fireplace.bricks" },
+                        "*": {
+                            "ambient_occlusion": true, "face_dimming": true,
+                            "texture": "mco_santa:chimney.lit", "render_method": "opaque"
+                        }
+                    }
                 }
             }
         ]

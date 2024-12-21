@@ -18,3 +18,21 @@ export const extinguishItems = /** @type {const} */ (
         'minecraft:netherite_shovel'
     ]
 )
+
+/** Block replacable blocks in Vanilla */
+export const replaceableBlocks = /** @type {const} */ (
+    [
+        "minecraft:air",
+        "minecraft:snow_layer",
+        "minecraft:short_grass",
+        "minecraft:tall_grass",
+        "minecraft:fern",
+        "minecraft:large_fern",
+        "minecraft:nether_sprouts",
+        "minecraft:crimson_roots",
+        "minecraft:seagrass",
+        "minecraft:vine",
+        "minecraft:glow_lichen",
+        "minecraft:snow_layer"
+    ]
+)
