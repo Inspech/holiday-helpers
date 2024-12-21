@@ -1,9 +1,12 @@
 /** @import {Block, DimensionLocation} from "@minecraft/server" */
+import { world } from "@minecraft/server"
+
 import { entityRotationFromBlockRotation } from "../../../0utilities/blockFunctions"
 
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../../0config/blocks/chimney.js"
 import { warnDevelopersInChat } from "../../../0utilities/debug.js"
+import { checkForChimneyBlocks } from "../functions/fireplace.js"
 
 /** Emits a particle from the Fireplace locator
  * @param {Block} block * @param {DimensionLocation} locator */
@@ -15,24 +18,27 @@ export function fireplaceEmitParticleEvent(block, locator, VFX) {
 
     // Hooking into this event to also spawn smoke at the top of the associated Chimney
     const aboveBlock = block.above()
+    // If the block above is not what we want, cancel the remainder of the event
     if (aboveBlock == undefined || aboveBlock.typeId != chimneyBlockConfig.blockID) return
 
-    let cursorBlock, destinationLocation
+    let cursorBlock, topLocator
+    // Read blocks in a configurable (:3) range
     for (let index = 1; index < (chimneyBlockConfig.maxDistanceFromFireplace + 1); index++) {
         cursorBlock = block.above(index)
 
-        if (cursorBlock.typeId != chimneyBlockConfig.blockID) { warnDevelopersInChat('Fireplace failed to emit smokestack.', block.dimension); break }
+        // If the block is no longer a Fireplace for any reason, cancel the event
+        if (cursorBlock.typeId != chimneyBlockConfig.blockID) break
 
+        // If we find a valid Chimney Top...
         if (
             cursorBlock.typeId == chimneyBlockConfig.blockID &&
             cursorBlock.permutation.getState(chimneyBlockConfig.blockShapeState) ==
             chimneyBlockConfig.blockShapeTypes[2]
         ) {
-            destinationLocation = cursorBlock.above().center()
+            // ...set the locator to the top of it
+            topLocator = cursorBlock.above().center()
 
-            blockDimension.spawnParticle(chimneyBlockConfig.smokePuffVFX, destinationLocation)
-            warnDevelopersInChat('Fireplace successfully emitted a smokestack!', block.dimension)
-            break
+            blockDimension.spawnParticle(chimneyBlockConfig.smokePuffVFX, topLocator); break
         }
     }
 }
@@ -47,14 +53,26 @@ export function fireplaceEmitSoundEvent(block, SFX) {
  * @param {Block} block * @param {Block} frontBlock */
 export function fireplaceGiveBirthToSanta(block, frontBlock, blockRotation) {
     const blockDimension = block.dimension, blockLocation = block.location, blockPermutation = block.permutation
+    const timeOfDay = world.getTimeOfDay()
 
-    blockDimension.runCommand(
-        `summon mco_santa:mini_santa ${frontBlock.center().x} ${frontBlock.center().y} ${frontBlock.center().z} 0 ${entityRotationFromBlockRotation(blockRotation)}`
-    )
+    // Only happens from Midnight to Sunrise
+    if (timeOfDay > 18000 && timeOfDay < 23000) {
 
-    blockDimension.playSound(fireplaceBlockConfig.santaSpawnSFX, blockLocation)
-    blockDimension.playSound(fireplaceBlockConfig.douseSFX, blockLocation)
-    block.setPermutation(blockPermutation.withState(
-        fireplaceBlockConfig.blockIsLitState, false
-    ))
+        // If there are not enough Chimney blocks, cancel the event
+        if (checkForChimneyBlocks(block) < fireplaceBlockConfig.minChimneyBlocksForSanta) return
+
+        // Ho ho ho!
+        blockDimension.runCommand(
+            `summon mco_santa:mini_santa ${frontBlock.center().x} ${frontBlock.center().y} ${frontBlock.center().z} ${entityRotationFromBlockRotation(blockRotation)} 0`
+        )
+
+        // Special effects
+        blockDimension.playSound(fireplaceBlockConfig.santaSpawnSFX, blockLocation)
+        blockDimension.playSound(fireplaceBlockConfig.douseSFX, blockLocation)
+
+        // Finally, douse the Fireplace - we don't want to kill Santa!!
+        block.setPermutation(blockPermutation.withState(
+            fireplaceBlockConfig.blockIsLitState, false
+        ))
+    }
 }

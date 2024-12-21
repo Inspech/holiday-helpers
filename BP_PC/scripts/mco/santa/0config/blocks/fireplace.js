@@ -24,6 +24,9 @@ export const fireplaceBlockConfig = {
     smokeVFX: 'minecraft:basic_smoke_particle',
     douseVFX: 'minecraft:basic_smoke_particle',
     litVFX: 'minecraft:basic_flame_particle',
+
+    minChimneyBlocksForSanta: 4,
+    maxChimneyBlocksForSanta: 20
 }
 
 /** This is the array of different items used to fuel a Fireplace block */
