@@ -3,6 +3,7 @@
 import { BlockPermutation, GameMode } from "@minecraft/server"
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 
+import { getPlayerCardinalFacing } from "../../../0utilities/playerFunctions.js"
 
 /** Interaction component for when the Fireplace is empty 
  * @type {BlockCustomComponentRegistration} **/

@@ -4,9 +4,9 @@
 import { world } from "@minecraft/server"
 
 import fireplaceFirewoodInteractionComponent from "./components/fireplaceFirewoodInteractionComponent.js"
-import fireplaceIgnitionInteractionComponent from "./components/fireplaceFirewoodInteractionComponent.js"
-import fireplacePlacementComponent from "./components/fireplaceFirewoodInteractionComponent.js"
-import fireplaceTickingComponent from "./components/fireplaceFirewoodInteractionComponent.js"
+import fireplaceIgnitionInteractionComponent from "./components/fireplaceIgnitionInteractionComponent.js"
+import fireplacePlacementComponent from "./components/fireplacePlacementComponent.js"
+import fireplaceTickingComponent from "./components/fireplaceTickingComponent.js"
 
 const customComponents = [
     fireplaceFirewoodInteractionComponent,

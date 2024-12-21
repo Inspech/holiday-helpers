@@ -15,9 +15,13 @@ export function fireplaceEmitSoundEvent(block, SFX) {
 }
 
 /** Ejects a Mini Santa
- * @param {Block} block */
+ * @param {Block} block * @param {Block} frontBlock */
 export function fireplaceGiveBirthToSanta(block, frontBlock, blockRotation) {
-    block.dimension.spawnEntity('mco_santa:mini_santa', frontBlock, {
-        initialRotation: entityRotationFromBlockRotation(blockRotation)
-    })
+    block.dimension.runCommand(
+        `summon mco_santa:mini_santa ${frontBlock.center().x} ${frontBlock.center().y} ${frontBlock.center().z} 0 ${entityRotationFromBlockRotation(blockRotation)}`
+    )
+
+    // block.dimension.spawnEntity('mco_santa:mini_santa', frontBlock.location, {
+    //     initialRotation: entityRotationFromBlockRotation(blockRotation)
+    // })
 }

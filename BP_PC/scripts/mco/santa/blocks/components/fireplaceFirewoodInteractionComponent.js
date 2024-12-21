@@ -1,6 +1,6 @@
 /** @import {BlockCustomComponentRegistration} from "../components.js" */
 
-import { decrementStack, getPlayerItem } from "../../0utilities/playerFunctions.js"
+import { decrementStack, getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig, firewoodFuelItems } from "../../0config/blocks/fireplace.js"
 
 /** Interaction component for when the Fireplace is empty 

@@ -5,8 +5,8 @@ import { clampedRandom } from "../../../0utilities/math"
 export const fireplaceBlockConfig = {
     blockID: 'mco_santa:fireplace',
 
-    particleAdjustmentHorizontal: clampedRandom(0.2, 0.8),
-    particleAdjustmentVertical: clampedRandom(0.2, 0.66),
+    particleAdjustmentHorizontal: { min: 0.2, max: 0.8 },
+    particleAdjustmentVertical: { min: 0.2, max: 0.67 },
 
     blockHasFirewoodState: 'mco_santa:fireplace.has_firewood',
     blockIsLitState: 'mco_santa:block.is_lit',

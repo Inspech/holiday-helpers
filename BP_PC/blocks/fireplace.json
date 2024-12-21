@@ -112,7 +112,7 @@
                         "up": { "texture": "mco_santa:fireplace.top" }
                     },
 
-                    "minecraft:tick": { "interval_range": [ 20, 180 ], "looping": true },
+                    "minecraft:tick": { "interval_range": [ 20, 200 ], "looping": true },
                     "minecraft:custom_components": [
                         "mco_santa:fireplace.ignition_interaction",
                         "mco_santa:fireplace.ticking"

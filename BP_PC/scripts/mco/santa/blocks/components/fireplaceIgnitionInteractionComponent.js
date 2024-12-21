@@ -1,6 +1,6 @@
 /** @import {BlockCustomComponentRegistration} from "../components.js" */
 
-import { getPlayerItem } from "../../0utilities/playerFunctions.js"
+import { getPlayerItem } from "../../../0utilities/playerFunctions.js"
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 
 import { ignitionItems, extinguishItems } from "../../../0globalConfig/vanilla.js"

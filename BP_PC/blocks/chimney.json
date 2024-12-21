@@ -42,12 +42,11 @@
                 "components": {
                     "minecraft:light_dampening": 15,
 
-                    "minecraft:geometry": "geometry.mco_santa.chimney.column",
+                    "minecraft:geometry": "minecraft:geometry.full_block",
                     "minecraft:material_instances": {
-                        "down": { "texture": "mco_santa:fireplace.bricks" },
                         "*": {
                             "ambient_occlusion": true, "face_dimming": true,
-                            "texture": "mco_santa:chimney", "render_method": "opaque"
+                            "texture": "mco_santa:fireplace.bricks", "render_method": "opaque"
                         }
                     },
 
