@@ -17,7 +17,7 @@ export function fireplaceEmitParticleEvent(block, locator, VFX) {
     const aboveBlock = block.above()
     if (aboveBlock == undefined || aboveBlock.typeId != chimneyBlockConfig.blockID) return
 
-    let cursorBlock, destinationLocation, aboveBlocks = []
+    let cursorBlock, destinationLocation
     for (let index = 1; index < (chimneyBlockConfig.maxDistanceFromFireplace + 1); index++) {
         cursorBlock = block.above(index)
 
