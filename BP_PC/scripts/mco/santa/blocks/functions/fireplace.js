@@ -1,4 +1,4 @@
-/** @import {Block, DimensionLocation} from "@minecraft/server" */
+/** @import { Block } from "@minecraft/server" */
 
 import { fireplaceBlockConfig } from "../../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../../0config/blocks/chimney.js"

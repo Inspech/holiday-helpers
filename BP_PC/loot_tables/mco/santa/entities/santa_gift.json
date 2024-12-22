@@ -1,0 +1,17 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{ "type": "item", "name": "mco_santa:blue_present", "weight": 10 },
+				{ "type": "item", "name": "mco_santa:green_present", "weight": 10 },
+				{ "type": "item", "name": "mco_santa:gold_present", "weight": 10 },
+				{ "type": "item", "name": "mco_santa:red_present", "weight": 1 },
+
+
+				{ "type": "item", "name": "minecraft:coal", "weight": 1 },
+				{ "type": "item", "name": "minecraft:charcoal", "weight": 1 }
+			]
+		}
+	]
+}

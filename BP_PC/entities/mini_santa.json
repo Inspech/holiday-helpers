@@ -6,7 +6,15 @@
             "is_spawnable": true, "is_summonable": true,
 
             "properties": {
-                "mco_santa:initialised": { "client_sync": true, "default": false, "type": "bool" }
+                "mco_santa:initialised": { "client_sync": true, "default": false, "type": "bool" },
+                "mco_santa:santa.has_nightly_present": {
+                    "client_sync": false, "default": false, "type": "bool"
+                },
+                "mco_santa:santa.skin_variant": {
+                    "client_sync": true,
+                    "type": "int", "default": 0,
+                    "range": [ 0, 3 ]
+                }
             }
         },
 
@@ -80,6 +88,14 @@
                 ]
             },
 
+            "minecraft:scheduler": {
+                "min_delay_secs": 0, "max_delay_secs": 0,
+                "scheduled_events": [ {
+                        "filters": { "test": "is_daytime", "operator": "!=", "value": true },
+                        "event": "mco_santa:mini_santa.set_present_available.true"
+                    } ]
+            },
+
             "minecraft:tameable": {
                 "tame_event": { "event": "minecraft:on_tame", "target": "self" },
                 "probability": 0.33,
@@ -112,19 +128,62 @@
         "component_groups": {
             "mini_santa:timer_to_initialise": {
                 "minecraft:timer": {
-                    "time": 0.125, "looping": true,
-                    "time_down_event": { "event": "example:foo", "target": "self" }
+                    "time": 0.125, "looping": false,
+                    "time_down_event": { "event": "mco_santa:mini_santa.set_initialised", "target": "self" }
+                }
+            },
+
+            "mini_santa:has_nightly_present": {
+                "minecraft:timer": {
+                    "randomInterval": true,
+                    "time": [ 30, 120 ], "looping": false,
+                    "time_down_event": {
+                        "event": "mco_santa:mini_santa.gift_owner",
+                        "target": "self"
+                    }
                 }
             }
         },
 
         "events": {
+            "minecraft:entity_spawned": {
+                "sequence": [
+                    { "trigger": "mco_santa:mini_santa.set_initialised" },
+                    { "trigger": "mco_santa:mini_santa.randomize_skin_colour" }
+                ]
+            },
+
             "mco_santa:mini_santa.spawned_from_chimney": {
+                "trigger": "mco_santa:mini_santa.randomize_skin_colour",
                 "add": { "component_groups": [ "mini_santa:timer_to_initialise" ] }
+            },
+
+            "mco_santa:mini_santa.randomize_skin_colour": {
+                "set_property": { "mco_santa:santa.skin_variant": "math.random_integer(0, 3)" }
             },
 
             "mco_santa:mini_santa.set_initialised": {
                 "set_property": { "mco_santa:initialised": true }
+            },
+
+            "mco_santa:mini_santa.set_present_available.true": {
+                "set_property": { "mco_santa:santa.has_nightly_present": true },
+                "add": { "component_groups": [ "mini_santa:has_nightly_present" ] },
+                "queue_command": { "command": [ "say Santa has a gift for you!" ] }
+            },
+
+            "mco_santa:mini_santa.gift_owner": {
+                "queue_command": { "command": "scriptevent mco_santa:mini_santa give_gift" }
+            },
+
+            "mco_santa:mini_santa.gifted_owner": {
+                "trigger": "mco_santa:mini_santa.set_present_available.false"
+            },
+
+            "mco_santa:mini_santa.set_present_available.false": {
+                "set_property": { "mco_santa:santa.has_nightly_present": false },
+                "remove": { "component_groups": [ "mini_santa:has_nightly_present" ] },
+                "queue_command": { "command": [ "say Santa no longer has a gift for you" ] }
             }
         }
     }
