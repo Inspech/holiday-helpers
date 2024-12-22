@@ -38,7 +38,8 @@
 
                 "anim.walk": "animation.mco_santa.mini_santa.walking",
                 "anim.idle": "animation.mco_santa.mini_santa.idle",
-                "anim.idle2": "animation.mco_santa.mini_santa.idle2"
+                "anim.dancing": "animation.mco_santa.mini_santa.dancing",
+                "anim.waving": "animation.mco_santa.mini_santa.waving"
             }
         }
     }

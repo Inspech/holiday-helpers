@@ -1,0 +1,22 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "mco_santa:chimney"
+        },
+
+        "unlock": [ { "item": "minecraft:brick" } ],
+        "tags": [ "crafting_table" ],
+
+        "pattern": [
+            "S",
+            "B"
+        ],
+        "key": {
+            "S": { "item": "minecraft:smooth_stone_slab" },
+            "B": { "item": "minecraft:brick_block" }
+        },
+
+        "result": { "item": "mco_santa:chimney" }
+    }
+}

@@ -22,7 +22,7 @@
 				},
 
 				"default": {
-					"animations": [ "anim.idle", "anim.idle2" ],
+					"animations": [ "anim.idle", "anim.dancing", "anim.waving" ],
 
 					"blend_transition": 0.125,
 					"transitions": [

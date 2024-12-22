@@ -3,7 +3,7 @@
     "minecraft:block": {
         "description": {
             "identifier": "mco_santa:fireplace",
-            "menu_category": { "category": "construction" },
+            "menu_category": { "category": "items" },
 
             "traits": {
                 "minecraft:placement_direction": {
