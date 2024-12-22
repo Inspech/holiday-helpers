@@ -33,7 +33,7 @@
                 }
             },
 
-            "minecraft:custom_components": [ "mco_santa:chimney.placement", "mco_santa:global.placement.sfx" ],
+            "minecraft:custom_components": [ "mco_santa:chimney.placement", "mco_santa:block.placement.SFX" ],
 
             "minecraft:item_visual": {
                 "geometry": "geometry.mco_santa.chimney.top",
