@@ -10,7 +10,7 @@
         },
 
         "components": {
-            "minecraft:light_dampening": 0,
+            "minecraft:light_dampening": 15,
             "minecraft:map_color": "#e6a02c",
 
             "minecraft:geometry": {
