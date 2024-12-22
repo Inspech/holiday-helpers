@@ -389,8 +389,8 @@
 			}
 		},
 		"animation.mco_santa.mini_santa.dancing": {
+			"start_delay": "math.Random(1, 2)",
 			"loop": true,
-			"start_delay": "math.Random(3, 4)",
 			"override_previous_animation": true,
 			"bones": {
 				"body": {
@@ -412,7 +412,8 @@
 			}
 		},
 		"animation.mco_santa.mini_santa.waving": {
-			"start_delay": "math.Random(1, 2)",
+			"start_delay": "math.Random(4, 5)",
+			"loop": false,
 			"override_previous_animation": true,
 			"bones": {
 				"body": {
