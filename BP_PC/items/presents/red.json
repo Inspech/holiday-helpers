@@ -9,7 +9,7 @@
         "components": {
             "minecraft:rarity": { "value": "uncommon" },
             "minecraft:icon": {
-                "textures": { "default": "mco_santa:red_present" }
+                "textures": { "default": "mco_santa:present.red" }
             },
 
             "minecraft:max_stack_size": 16,

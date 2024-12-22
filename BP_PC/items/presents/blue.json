@@ -9,7 +9,7 @@
         "components": {
             "minecraft:rarity": { "value": "uncommon" },
             "minecraft:icon": {
-                "textures": { "default": "mco_santa:blue_present" }
+                "textures": { "default": "mco_santa:present.blue" }
             },
 
             // NOTE: No, we are not using this feature. It would be really fun, though!
