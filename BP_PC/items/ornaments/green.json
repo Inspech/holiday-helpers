@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "mco_santa:green_ornament",
+            "menu_category": { "category": "items" }
+        },
+
+        "components": {
+            "minecraft:icon": {
+                "textures": { "default": "mco_santa:ornament.green" }
+            },
+
+            "minecraft:custom_components": [ "mco_santa:ornament.placement" ],
+
+            "minecraft:tags": {
+                "tags": [ "mco_santa:ornaments" ]
+            }
+        }
+    }
+}

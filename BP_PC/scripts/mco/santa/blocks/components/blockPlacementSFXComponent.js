@@ -3,10 +3,10 @@
 import sounds from "../../0config/blockData.js"
 
 
-/** Special placement considerations for the Fireplace block
+/** Plays a sound effect from a defined mapping on placement of a block
  * @type {BlockCustomComponentRegistration} **/
 export default {
-    ID: "mco_santa:global.placement.sfx",
+    ID: "mco_santa:block.placement.SFX",
 
     beforeOnPlayerPlace(event) {
         const block = event.block, blockDimension = block.dimension, blockLocation = block.location

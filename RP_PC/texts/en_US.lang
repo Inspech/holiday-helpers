@@ -12,18 +12,29 @@ tile.mco_santa:fireplace.name=Fireplace Block
 tile.mco_santa:chimney.name=Chimney Block
 
 tile.mco_santa:blue_present.name=Blue Christmas Present
+item.mco_santa:blue_present=Blue Christmas Present
 tile.mco_santa:red_present.name=Red Christmas Present
+item.mco_santa:red_present=Red Christmas Present
 tile.mco_santa:green_present.name=Green Christmas Present
+item.mco_santa:green_present=Green Christmas Present
 tile.mco_santa:gold_present.name=Golden Christmas Present
+item.mco_santa:gold_present=Golden Christmas Present
+
+tile.mco_santa:blue_ornament.name=Blue Christmas Ornament
+item.mco_santa:blue_ornament=Blue Christmas Ornament
+tile.mco_santa:green_ornament.name=Green Christmas Ornament
+item.mco_santa:green_ornament=Green Christmas Ornament
+tile.mco_santa:purple_ornament.name=Purple Christmas Ornament
+item.mco_santa:purple_ornament=Purple Christmas Ornament
+tile.mco_santa:red_ornament.name=Red Christmas Ornament
+item.mco_santa:red_ornament=Red Christmas Ornament
 
 ## Items ##
-item.mco_santa:blue_present=Blue Christmas Present
-item.mco_santa:red_present=Red Christmas Present
-item.mco_santa:green_present=Green Christmas Present
-item.mco_santa:gold_present=Golden Christmas Present
 
 ## Entities ##
 entity.mco_santa:mini_santa.name=Mini Santa
 item.spawn_egg.entity.mco_santa:mini_santa.name=Mini Santa Spawn Egg
 
 ## UI ##
+mco_santa:itemGroup.name.presents=Presents
+mco_santa:itemGroup.name.ornaments=Ornaments

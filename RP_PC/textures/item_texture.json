@@ -3,10 +3,15 @@
     "texture_name": "atlas.items",
 
     "texture_data": {
-        "mco_santa:blue_present": { "textures": "textures/mco/santa/items/present/blue" },
-        "mco_santa:gold_present": { "textures": "textures/mco/santa/items/present/gold" },
-        "mco_santa:green_present": { "textures": "textures/mco/santa/items/present/green" },
-        "mco_santa:red_present": { "textures": "textures/mco/santa/items/present/red" },
+        "mco_santa:present.blue": { "textures": "textures/mco/santa/items/present/blue" },
+        "mco_santa:present.gold": { "textures": "textures/mco/santa/items/present/gold" },
+        "mco_santa:present.green": { "textures": "textures/mco/santa/items/present/green" },
+        "mco_santa:present.red": { "textures": "textures/mco/santa/items/present/red" },
+
+        "mco_santa:ornament.blue": { "textures": "textures/mco/santa/items/ornament/blue" },
+        "mco_santa:ornament.green": { "textures": "textures/mco/santa/items/ornament/green" },
+        "mco_santa:ornament.purple": { "textures": "textures/mco/santa/items/ornament/purple" },
+        "mco_santa:ornament.red": { "textures": "textures/mco/santa/items/ornament/red" },
 
         "mco_santa:spawn_egg": {
             "textures": [ "textures/mco/santa/items/spawn_eggs/mini_santa" ]

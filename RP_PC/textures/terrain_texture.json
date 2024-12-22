@@ -4,7 +4,7 @@
     "padding": 8, "num_mip_levels": 4,
 
     "texture_data": {
-        // Present
+        // Presents
         "mco_santa:present.blue": { "textures": "textures/mco/santa/blocks/present/blue" },
         "mco_santa:present.blue.particle": { "textures": "textures/mco/santa/blocks/present/blue.particle" },
         "mco_santa:present.gold": { "textures": "textures/mco/santa/blocks/present/gold" },
@@ -28,6 +28,16 @@
         "mco_santa:fireplace.front.lit": { "textures": "textures/mco/santa/blocks/fireplace/front.lit" },
 
         // Chimney
-        "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" }
+        "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" },
+
+        // Ornaments
+        "mco_santa:ornament.blue": { "textures": "textures/mco/santa/blocks/ornament/blue" },
+        "mco_santa:ornament.blue.particle": { "textures": "textures/mco/santa/blocks/ornament/blue.particle" },
+        "mco_santa:ornament.green": { "textures": "textures/mco/santa/blocks/ornament/green" },
+        "mco_santa:ornament.green.particle": { "textures": "textures/mco/santa/blocks/ornament/green.particle" },
+        "mco_santa:ornament.purple": { "textures": "textures/mco/santa/blocks/ornament/purple" },
+        "mco_santa:ornament.purple.particle": { "textures": "textures/mco/santa/blocks/ornament/purple.particle" },
+        "mco_santa:ornament.red": { "textures": "textures/mco/santa/blocks/ornament/red" },
+        "mco_santa:ornament.red.particle": { "textures": "textures/mco/santa/blocks/ornament/red.particle" }
     }
 }

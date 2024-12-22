@@ -1,0 +1,72 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "mco_santa:blue_ornament",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            },
+
+            "states": {
+                "mco_santa:block.is_hanging": [ false, true ]
+            }
+        },
+
+        "components": {
+            "minecraft:light_dampening": 0, "minecraft:light_emission": 4,
+            "minecraft:map_color": "#d82525",
+
+            "minecraft:geometry": {
+                "identifier": "geometry.mco_santa.ornament.ground",
+                "culling": "mco_santa:ornament"
+            },
+            "minecraft:material_instances": {
+                "down": { "texture": "mco_santa:ornament.blue.particle", "render_method": "alpha_test" },
+                "hook": {
+                    "ambient_occlusion": false, "face_dimming": false,
+                    "texture": "mco_santa:ornament.blue", "render_method": "alpha_test"
+                },
+                "*": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "texture": "mco_santa:ornament.blue", "render_method": "alpha_test"
+                }
+            },
+
+            "minecraft:collision_box": {
+                "origin": [ -4, 0, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+            "minecraft:selection_box": {
+                "origin": [ -4, 0, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+
+            // "minecraft:loot": "loot_tables/mco/santa/blocks/ornaments/blue.json",
+
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 0 },
+
+            "minecraft:redstone_conductivity": { "redstone_conductor": false }
+        },
+
+        "permutations": [
+            {
+                "condition": "query.block_state('mco_santa:block.is_hanging')",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.mco_santa.ornament.hanging"
+                    },
+
+                    "minecraft:collision_box": {
+                        "origin": [ -4, 4, -4 ],
+                        "size": [ 8, 8, 8 ]
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [ -4, 4, -4 ],
+                        "size": [ 8, 8, 8 ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -13,7 +13,7 @@ import fireplaceTickingComponent from "./components/fireplaceTickingComponent.js
 
 import chimneyPlacementComponent from "./components/chimneyPlacementComponent.js"
 
-import globalPlacementSFXComponent from "./components/globalPlacementSFXComponent.js"
+import blockPlacementSFXComponent from "./components/blockPlacementSFXComponent.js"
 
 const customComponents = [
     presentDestroyedComponent,
@@ -26,7 +26,7 @@ const customComponents = [
 
     chimneyPlacementComponent,
 
-    globalPlacementSFXComponent,
+    blockPlacementSFXComponent
 ]
 
 

@@ -18,6 +18,23 @@
                         ]
                     }
                 ]
+            },
+            {
+                "category_name": "items",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "mco_santa:ornament.red",
+                            "name": "mco_santa:itemGroup.name.ornaments"
+                        },
+                        "items": [
+                            "mco_santa:blue_present",
+                            "mco_santa:green_present",
+                            "mco_santa:purple_present",
+                            "mco_santa:red_present"
+                        ]
+                    }
+                ]
             }
         ]
     }
