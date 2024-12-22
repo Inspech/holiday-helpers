@@ -1,0 +1,41 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "mco_santa:blue_present",
+            "is_spawnable": false, "is_summonable": true,
+            "runtime_identifier": "minecraft:arrow"
+        },
+
+        "components": {
+            // Attributes and Statistics //
+            "minecraft:type_family": { "family": [ "present", "projectile", "inanimate" ] },
+            "minecraft:nameable": { },
+
+            "minecraft:collision_box": { "height": 0.67, "width": 0.67 },
+
+            "minecraft:projectile": {
+                "power": 1.5, "gravity": 0.03,
+                "anchor": 1, "angle_offset": 0.0,
+                "offset": [ 0, -0.1, 0 ],
+                "on_hit": {
+                    "impact_damage": { "damage": 6, "knockback": true },
+                    "remove_on_hit": { }
+                }
+            },
+
+            "minecraft:physics": { },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {
+                "default_values": {
+                    "max_optimized_distance": 100.0,
+                    "max_dropped_ticks": 7,
+                    "use_motion_prediction_hints": true
+                }
+            }
+        }
+    }
+}

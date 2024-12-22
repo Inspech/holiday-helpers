@@ -1,0 +1,18 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.mco_santa.present.hurtling": {
+            "loop": true,
+            "bones": {
+                "root": {
+                    "rotation": [
+                        // "(math.Pow(query.anim_time / 2, 3)) -query.target_x_rotation",
+                        "(query.anim_time * 360) - query.target_x_rotation",
+                        "-query.target_y_rotation",
+                        0
+                    ]
+                }
+            }
+        }
+    }
+}

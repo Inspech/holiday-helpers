@@ -1,0 +1,40 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block_culling_rules": {
+        "description": { "identifier": "mco_santa:present" },
+
+        "rules": [
+            // The Bow atop the Present
+            {
+                "geometry_part": { "bone": "bow" },
+                "direction": "up"
+            },
+
+            // The Present iteself
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "north" },
+                "direction": "north"
+            },
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "south" },
+                "direction": "south"
+            },
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "east" },
+                "direction": "east"
+            },
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "west" },
+                "direction": "west"
+            },
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "up" },
+                "direction": "up"
+            },
+            {
+                "geometry_part": { "bone": "root", "cube": 0, "face": "down" },
+                "direction": "down"
+            }
+        ]
+    }
+}

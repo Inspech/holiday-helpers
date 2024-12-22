@@ -3,6 +3,9 @@
 
 import { world } from "@minecraft/server"
 
+import presentDestroyedComponent from "./components/presentDestroyedComponent.js"
+import presentInteractedComponent from "./components/presentInteractedComponent.js"
+
 import fireplaceFirewoodInteractionComponent from "./components/fireplaceFirewoodInteractionComponent.js"
 import fireplaceIgnitionInteractionComponent from "./components/fireplaceIgnitionInteractionComponent.js"
 import fireplacePlacementComponent from "./components/fireplacePlacementComponent.js"
@@ -13,6 +16,9 @@ import chimneyPlacementComponent from "./components/chimneyPlacementComponent.js
 import globalPlacementSFXComponent from "./components/globalPlacementSFXComponent.js"
 
 const customComponents = [
+    presentDestroyedComponent,
+    presentInteractedComponent,
+
     fireplaceFirewoodInteractionComponent,
     fireplaceIgnitionInteractionComponent,
     fireplacePlacementComponent,

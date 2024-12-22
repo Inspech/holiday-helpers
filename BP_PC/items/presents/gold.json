@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "mco_santa:gold_present",
+            "menu_category": { "category": "items" }
+        },
+
+        "components": {
+            "minecraft:rarity": { "value": "epic" },
+            "minecraft:icon": {
+                "textures": { "default": "mco_santa:gold_present" }
+            },
+
+            "minecraft:max_stack_size": 16,
+            "minecraft:block_placer": {
+                "block": "mco_santa:gold_present",
+                "replace_block_item": true
+            },
+
+            "minecraft:fuel": { "duration": 3 },
+
+            "minecraft:tags": {
+                "tags": [ "mco_santa:presents" ]
+            }
+        }
+    }
+}

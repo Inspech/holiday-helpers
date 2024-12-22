@@ -1,0 +1,41 @@
+{
+    "format_version": "1.21.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "mco_santa:red_present",
+            "menu_category": {
+                "category": "construction",
+                "is_hidden_in_commands": true
+            }
+        },
+
+        "components": {
+            "minecraft:light_dampening": 0,
+            "minecraft:map_color": "#d4281f",
+
+            "minecraft:geometry": {
+                "identifier": "geometry.mco_santa.present",
+                "culling": "mco_santa:present"
+            },
+            "minecraft:material_instances": {
+                "down": { "texture": "mco_santa:present.red.particle", "render_method": "alpha_test" },
+                "bow": { "ambient_occlusion": false, "face_dimming": false, "render_method": "alpha_test" },
+                "*": {
+                    "ambient_occlusion": true, "face_dimming": true,
+                    "texture": "mco_santa:present.red", "render_method": "alpha_test"
+                }
+            },
+
+            "minecraft:custom_components": [ "mco_santa:present.destruction", "mco_santa:present.interaction" ],
+
+            "tag:minecraft:is_axe_item_destructible": { },
+            "tag:wood": { },
+
+            "minecraft:flammable": true,
+            "minecraft:loot": "loot_tables/empty.json",
+
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 2.5 },
+            "minecraft:destructible_by_explosion": { "explosion_resistance": 1.0 }
+        }
+    }
+}

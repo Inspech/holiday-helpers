@@ -3,6 +3,11 @@
 
     // ------------------------ //
 
+    "mco_santa:blue_present": { "sound": "moss_block" },
+    "mco_santa:gold_present": { "sound": "moss_block" },
+    "mco_santa:green_present": { "sound": "moss_block" },
+    "mco_santa:red_present": { "sound": "moss_block" },
+
     "mco_santa:fireplace": { "sound": "nether_brick" },
     "mco_santa:chimney": { "sound": "nether_brick" }
 }
