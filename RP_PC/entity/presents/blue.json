@@ -3,6 +3,9 @@
     "minecraft:client_entity": {
         "description": {
             "identifier": "mco_santa:blue_present",
+
+            // NOTE: No, we are not using this feature. It would be really fun, though!
+
             "geometry": { "default": "geometry.mco_santa.present" },
             "textures": { "default": "textures/mco/santa/blocks/present/blue" },
             "materials": { "default": "entity_alphatest" },

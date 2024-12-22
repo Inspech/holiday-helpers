@@ -7,6 +7,8 @@
             "runtime_identifier": "minecraft:arrow"
         },
 
+        // NOTE: No, we are not using this entity. It would be really fun, though!
+
         "components": {
             // Attributes and Statistics //
             "minecraft:type_family": { "family": [ "present", "projectile", "inanimate" ] },
