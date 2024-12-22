@@ -7,15 +7,27 @@
             "render_controllers": [ "controller.render.mco_santa.mini_santa" ],
 
             "geometry": { "default": "geometry.mco_santa.mini_santa" },
-            "textures": { "default": "textures/mco/santa/entity/mini_santa" },
+            "textures": {
+                "default": "textures/mco/santa/entity/mini_santa.0",
+                "one": "textures/mco/santa/entity/mini_santa.1",
+                "two": "textures/mco/santa/entity/mini_santa.2",
+                "three": "textures/mco/santa/entity/mini_santa.3"
+            },
             "materials": { "default": "entity_alphatest" },
 
             "spawn_egg": { "texture": "mco_santa:spawn_egg", "texture_index": 0 },
 
             "scripts": {
-                "initialize": [ "variable.initialised = 0.0;" ],
+                "initialize": [
+                    "variable.initialised = 0.0;",
+                    "variable.skin_variant = 0.0;"
+                ],
 
-                "pre_animation": [ "variable.initialised = query.property('mco_santa:initialised');" ],
+                "pre_animation": [
+                    "variable.initialised = query.property('mco_santa:initialised');",
+                    "variable.skin_variant = query.property('mco_santa:santa.skin_variant');"
+                ],
+
                 "animate": [ "ctrl.movement" ]
             },
 
@@ -24,8 +36,9 @@
 
                 "anim.spawn_from_chimney": "animation.mco_santa.mini_santa.spawn_from_chimney",
 
-                "anim.walk": "animation.mco_santa.mini_santa.walk",
-                "anim.idle": "animation.mco_santa.mini_santa.idle"
+                "anim.walk": "animation.mco_santa.mini_santa.walking",
+                "anim.idle": "animation.mco_santa.mini_santa.idle",
+                "anim.idle2": "animation.mco_santa.mini_santa.idle2"
             }
         }
     }
