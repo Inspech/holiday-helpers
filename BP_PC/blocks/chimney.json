@@ -65,9 +65,6 @@
             {
                 "condition": "query.block_state('mco_santa:chimney.shape') == 'top' && query.block_state('mco_santa:block.is_lit')",
                 "components": {
-                    "minecraft:tick": { "interval_range": [ 60, 120 ], "looping": true },
-                    "minecraft:custom_components": [ "mco_santa:chimney.ticking" ],
-
                     "minecraft:material_instances": {
                         "down": { "texture": "mco_santa:fireplace.bricks" },
                         "*": {
