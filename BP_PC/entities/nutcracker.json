@@ -19,7 +19,7 @@
         "components": {
             // Attributes and Statistics //
             "minecraft:type_family": { "family": [ "nutcracker", "villager", "mob" ] },
-            "minecraft:nameable": { },
+            "minecraft:nameable": { "allow_name_tag_renaming": true },
 
             "minecraft:collision_box": { "height": 1.55, "width": 0.67 },
             "minecraft:health": { "value": 50 },
@@ -29,7 +29,7 @@
             "minecraft:balloonable": { "mass": 0.125 },
 
             "minecraft:equipment": {
-                "table": "loot_tables/entities/vindicator_gear.json",
+                "table": "loot_tables/mco/santa/entities/nutcracker_equipment.json",
                 "slot_drop_chance": [
                     { "slot": "slot.weapon.mainhand", "drop_chance": 0 }
                 ]
@@ -181,6 +181,7 @@
                 "interactions": {
                     "vibration": "shear",
                     "swing": true,
+                    "interact_text": "action.interact.mco_santa:nutcracker.interact",
                     "on_interact": {
                         "filters": {
                             "all_of": [

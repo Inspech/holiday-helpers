@@ -36,3 +36,5 @@ item.mco_santa:nutcracker=Nutcracker
 ## UI ##
 mco_santa:itemGroup.name.presents=Presents
 mco_santa:itemGroup.name.ornaments=Ornaments
+
+action.interact.mco_santa:nutcracker.interact=Interact
