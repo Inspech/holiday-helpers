@@ -28,7 +28,7 @@
                     "variable.skin_variant = query.property('mco_santa:santa.skin_variant');"
                 ],
 
-                "animate": [ "ctrl.movement" ]
+                "animate": [ "ctrl.movement", "anim.look_at_target" ]
             },
 
             "animations": {
@@ -39,7 +39,10 @@
                 "anim.walk": "animation.mco_santa.mini_santa.walking",
                 "anim.idle": "animation.mco_santa.mini_santa.idle",
                 "anim.dancing": "animation.mco_santa.mini_santa.dancing",
-                "anim.waving": "animation.mco_santa.mini_santa.waving"
+                "anim.waving": "animation.mco_santa.mini_santa.waving",
+
+
+                "anim.look_at_target": "animation.common.look_at_target"
             }
         }
     }
