@@ -3,11 +3,6 @@
     "texture_name": "atlas.items",
 
     "texture_data": {
-        "mco_santa:present.blue": { "textures": "textures/mco/santa/items/present/blue" },
-        "mco_santa:present.gold": { "textures": "textures/mco/santa/items/present/gold" },
-        "mco_santa:present.green": { "textures": "textures/mco/santa/items/present/green" },
-        "mco_santa:present.red": { "textures": "textures/mco/santa/items/present/red" },
-
         "mco_santa:ornament.blue": { "textures": "textures/mco/santa/items/ornament/blue" },
         "mco_santa:ornament.green": { "textures": "textures/mco/santa/items/ornament/green" },
         "mco_santa:ornament.purple": { "textures": "textures/mco/santa/items/ornament/purple" },

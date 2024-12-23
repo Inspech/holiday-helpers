@@ -3,10 +3,7 @@
     "minecraft:block": {
         "description": {
             "identifier": "mco_santa:red_present",
-            "menu_category": {
-                "category": "none",
-                "is_hidden_in_commands": true
-            }
+            "menu_category": { "category": "items" }
         },
 
         "components": {
