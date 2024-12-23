@@ -33,7 +33,6 @@
 
                 "anim.marching_arms": "animation.mco_santa.nutcracker.marching.arms",
                 "anim.marching_body": "animation.mco_santa.nutcracker.marching.body",
-                "anim.idle_event": "animation.mco_santa.nutcracker.idle_event",
 
                 "anim.acquired_target": "animation.mco_santa.nutcracker.acquired_target",
                 "anim.lost_target": "animation.mco_santa.nutcracker.lost_target",
