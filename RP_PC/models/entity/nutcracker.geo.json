@@ -98,7 +98,7 @@
 					"parent": "head",
 					"pivot": [0, 11, 0],
 					"cubes": [
-						{"origin": [-4, 11, -4], "size": [8, 4, 8], "inflate": 0.25, "uv": [0, 30]}
+						{"origin": [-4, 10.75, -4], "size": [8, 4, 8], "inflate": 0.25, "uv": [0, 30]}
 					]
 				},
 				{
