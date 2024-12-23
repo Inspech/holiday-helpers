@@ -27,6 +27,30 @@
                     "eat": "mob.wanderingtrader.drink_milk",
                     "step": "mob.armadillo.step"
                 }
+            },
+            "mco_santa:nutcracker": {
+                "volume": 1.0, "pitch": [ 0.80, 1.20 ],
+                "events": {
+                    "hurt": {
+                        "sound": "mob.goat.horn_break",
+                        "volume": 1.0, "pitch": 1.125
+                    },
+
+                    "death": {
+                        "sound": "mob.goat.horn_break",
+                        "volume": 1.0, "pitch": 0.66
+                    },
+
+                    "spawn": {
+                        "sound": "dig.wood",
+                        "volume": 1.0, "pitch": 1.0
+                    },
+
+                    "step": {
+                        "sound": "step.bamboo_wood",
+                        "volume": 1.0, "pitch": 1.25
+                    }
+                }
             }
         }
     }

@@ -4,9 +4,11 @@
 import { world } from "@minecraft/server"
 
 import ornamentPlacementComponent from "./components/ornamentPlacementComponent.js"
+import nutcrackerPlacementComponent from "./components/nutcrackerPlacementComponent.js"
 
 const customComponents = [
-    ornamentPlacementComponent
+    ornamentPlacementComponent,
+    nutcrackerPlacementComponent
 ]
 
 world.beforeEvents.worldInitialize.subscribe(

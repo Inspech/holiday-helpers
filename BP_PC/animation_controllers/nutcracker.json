@@ -1,0 +1,19 @@
+{
+    "format_version": "1.21.51",
+    "animation_controllers": {
+        "controller.animation.mco_santa.nutcracker.movement": {
+            "initial_state": "default",
+
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "marching": "query.property('mco_santa:entity.has_target')" }
+                    ]
+                },
+                "marching": {
+                    "animations": [ "anim.marching" ]
+                }
+            }
+        }
+    }
+}

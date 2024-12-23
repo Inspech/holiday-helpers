@@ -1,0 +1,66 @@
+{
+    "format_version": "1.21.51",
+
+    "animation_controllers": {
+        "controller.animation.mco_santa.nutcracker.movement": {
+            "initial_state": "default",
+
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "marching": "query.ground_speed > 0.125" }
+                    ]
+                },
+
+
+                "marching": {
+                    "animations": [
+                        "anim.marching_body",
+                        { "anim.marching_arms": "!variable.nutcracker_has_target" }
+                    ],
+
+                    "blend_transition": 0.33,
+                    "transitions": [
+                        { "default": "query.ground_speed == 0.0 && !variable.nutcracker_has_target" }
+                    ]
+                }
+            }
+        },
+
+        "controller.animation.mco_santa.nutcracker.attack": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "acquired_target": "variable.nutcracker_has_target" }
+                    ]
+                },
+
+                "acquired_target": {
+                    "animations": [ "anim.acquired_target" ],
+                    "transitions": [ { "has_target": "query.all_animations_finished" } ]
+                },
+                "has_target": {
+                    "animations": [ "anim.has_target" ],
+
+                    "transitions": [
+                        { "lost_target": "!variable.nutcracker_has_target" },
+                        { "attack": "variable.attack_time > 0.0" }
+                    ]
+                },
+                "lost_target": {
+                    "animations": [ "anim.lost_target" ],
+                    "transitions": [ { "default": "query.all_animations_finished" } ]
+                },
+
+                "attack": {
+                    "animations": [ "anim.has_target", "anim.attack" ],
+
+                    "transitions": [
+                        { "has_target": "query.all_animations_finished" }
+                    ]
+                }
+            }
+        }
+    }
+}

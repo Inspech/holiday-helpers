@@ -3,4 +3,5 @@ import './items/index.js'
 
 import './scriptevents/index.js'
 
+import './worldEvents/entitySpawned.js'
 import './worldEvents/playerDestroyedBlock.js'

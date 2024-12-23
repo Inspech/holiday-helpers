@@ -13,6 +13,7 @@
         "mco_santa:ornament.purple": { "textures": "textures/mco/santa/items/ornament/purple" },
         "mco_santa:ornament.red": { "textures": "textures/mco/santa/items/ornament/red" },
 
+        "mco_santa:nutcracker": { "textures": "textures/mco/santa/items/spawn_eggs/nutcracker" },
         "mco_santa:spawn_egg": {
             "textures": [ "textures/mco/santa/items/spawn_eggs/mini_santa" ]
         }

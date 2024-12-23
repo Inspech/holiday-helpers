@@ -1,4 +1,4 @@
-import { BlockPermutation, world } from "@minecraft/server"
+import { BlockPermutation, EffectTypes, EffectType, world, system } from "@minecraft/server"
 
 import { fireplaceBlockConfig } from "../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../0config/blocks/chimney.js"

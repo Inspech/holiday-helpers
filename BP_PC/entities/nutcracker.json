@@ -1,0 +1,263 @@
+{
+    "format_version": "1.21.51",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "mco_santa:nutcracker",
+            "is_spawnable": true, "is_summonable": true,
+
+            "properties": {
+                "mco_santa:entity.has_target": { "client_sync": true, "default": false, "type": "bool" }
+            },
+
+            "scripts": { "animate": [ "ctrl.movement" ] },
+            "animations": {
+                "ctrl.movement": "controller.animation.mco_santa.nutcracker.movement",
+                "anim.marching": "animation.mco_santa.nutcracker.marching"
+            }
+        },
+
+        "components": {
+            // Attributes and Statistics //
+            "minecraft:type_family": { "family": [ "nutcracker", "villager", "mob" ] },
+            "minecraft:nameable": { },
+
+            "minecraft:collision_box": { "height": 1.55, "width": 0.67 },
+            "minecraft:health": { "value": 50 },
+            "minecraft:attack": { "damage": 1 },
+
+            "minecraft:movement": { "value": 0.2 },
+            "minecraft:balloonable": { "mass": 0.125 },
+
+            "minecraft:equipment": {
+                "table": "loot_tables/entities/vindicator_gear.json",
+                "slot_drop_chance": [
+                    { "slot": "slot.weapon.mainhand", "drop_chance": 0 }
+                ]
+            },
+
+            // Movement and Navigation //
+            "minecraft:jump.static": { },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "can_pass_doors": true,
+                "can_break_doors": true
+            },
+            "minecraft:movement.basic": { },
+            "minecraft:can_climb": { },
+
+            "minecraft:behavior.melee_box_attack": {
+                "priority": 0, "speed_multiplier": 1,
+                "track_target": true,
+                "cooldown_time": 2.0
+            },
+            "minecraft:behavior.owner_hurt_by_target": {
+                "priority": 2
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 2
+            },
+            "minecraft:behavior.target_when_pushed": {
+                "priority": 2,
+                "percent_chance": 55.0,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "monster" },
+                                { "test": "is_family", "subject": "other", "operator": "!=", "value": "creeper" }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 3,
+
+                "must_see_forget_duration": 40.0,
+                "must_see": true,
+                "reselect_targets": true,
+
+                "entity_types": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "monster" },
+                                { "test": "is_family", "subject": "other", "operator": "!=", "value": "creeper" }
+                            ]
+                        },
+                        "within_default": 10
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "hoglin" },
+                                { "test": "is_difficulty", "operator": "!=", "value": "peaceful" }
+                            ]
+                        },
+                        "max_dist": 16
+                    },
+                    {
+                        "filters": {
+                            "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "zoglin" },
+                                { "test": "is_difficulty", "operator": "!=", "value": "peaceful" }
+                            ]
+                        },
+                        "max_dist": 16
+                    }
+                ]
+            },
+            "minecraft:behavior.avoid_mob_type": {
+                "priority": 6,
+                "entity_types": [
+                    {
+                        "filters": { "test": "is_family", "subject": "other", "value": "creeper" },
+                        "walk_speed_multiplier": 1.5, "sprint_speed_multiplier": 1.5,
+                        "max_dist": 12
+                    }
+                ]
+            },
+            "minecraft:behavior.float": {
+                "priority": 7
+            },
+            "minecraft:behavior.look_at_target": {
+                "look_distance": 8,
+                "probability": 0.02,
+                "angle_of_view_vertical": 360,
+                "angle_of_view_horizontal": 360
+            },
+            "minecraft:behavior.move_towards_home_restriction": {
+                "priority": 9
+            },
+
+            // General Behaviours //
+            "minecraft:leashable": { "soft_distance": 4.0, "hard_distance": 6.0, "max_distance": 10.0 },
+            "minecraft:breathable": { "totalSupply": 15, "suffocateTime": 0 },
+            "minecraft:is_hidden_when_invisible": { },
+            "minecraft:persistent": { },
+            "minecraft:follow_range": { "value": 64 },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+                        "cause": "lava", "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": { "cause": "fall", "deals_damage": "no" }
+            },
+
+            "minecraft:annotation.break_door": {
+                "break_time": 30,
+                "min_difficulty": "normal"
+            },
+
+            "minecraft:on_target_acquired": {
+                "event": "mco_santa:nutcracker.gain_target",
+                "target": "self"
+            },
+            "minecraft:on_target_escape": {
+                "event": "mco_santa:nutcracker.lose_target",
+                "target": "self"
+            },
+
+            "minecraft:home": {
+                "restriction_type": "random_movement",
+                "restriction_radius": 16
+            },
+
+            // TODO: Add Candy Cane item
+            "minecraft:tameable": {
+                "probability": 1,
+                "tame_items": [ "minecraft:stick" ]
+            },
+            "minecraft:healable": {
+                "items": [
+                    { "item": "minecraft:stick", "heal_amount": 2 }
+                ]
+            },
+            "minecraft:interact": {
+                "interactions": {
+                    "vibration": "shear",
+                    "swing": true,
+                    "on_interact": {
+                        "filters": {
+                            "all_of": [
+                                { "test": "is_family", "subject": "other", "value": "player" },
+                                { "test": "is_owner", "subject": "other" }
+                            ]
+                        },
+                        "event": "mco_santa:nutcracker.turn_into_item",
+                        "target": "self"
+                    }
+                }
+            },
+
+            "minecraft:conditional_bandwidth_optimization": { },
+            "minecraft:pushable": { "is_pushable": true, "is_pushable_by_piston": true },
+            "minecraft:physics": { "has_collision": true, "has_gravity": true }
+        },
+
+        "component_groups": {
+            "nutcracker:has_no_target": {
+                "minecraft:behavior.go_home": {
+                    "priority": 5, "speed_multiplier": 1,
+                    "goal_radius": 0.66, "interval": 1,
+                    "on_home": [
+                        {
+                            "event": "mco_santa:nutcracker.reached_home_block",
+                            "target": "self"
+                        }
+                    ]
+                }
+            },
+            "nutcracker:has_target": {
+                "minecraft:angry": {
+                    "duration": -1,
+                    "broadcast_anger": true,
+                    "broadcast_range": 16,
+                    "broadcast_targets": [ "nutcracker" ],
+                    "calm_event": {
+                        "event": "mco_santa:nutcracker.lose_target",
+                        "target": "self"
+                    }
+                }
+            },
+
+            "mco_santa:instant_despawn": { "minecraft:instant_despawn": { } }
+        },
+
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": { "component_groups": [ "nutcracker:has_no_target" ] }
+            },
+
+            "mco_santa:nutcracker.gain_target": {
+                "remove": { "component_groups": [ "nutcracker:has_no_target" ] },
+                "add": { "component_groups": [ "nutcracker:has_target" ] },
+                "set_property": { "mco_santa:entity.has_target": true }
+            },
+            "mco_santa:nutcracker.lose_target": {
+                "remove": { "component_groups": [ "nutcracker:has_target" ] },
+                "add": { "component_groups": [ "nutcracker:has_no_target" ] },
+                "set_property": { "mco_santa:entity.has_target": false }
+            },
+
+            "mco_santa:nutcracker.reached_home_block": {
+                "queue_command": {
+                    "command": "scriptevent mco_santa:nutcracker align_to_home_block"
+                }
+            },
+            "mco_santa:nutcracker.turn_into_item": {
+                "queue_command": {
+                    "command": "scriptevent mco_santa:nutcracker turn_into_item"
+                }
+            },
+
+            "mco_santa:instant_despawn": {
+                "add": { "component_groups": [ "mco_santa:instant_despawn" ] }
+            }
+        }
+    }
+}

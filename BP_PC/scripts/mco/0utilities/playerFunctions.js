@@ -16,10 +16,16 @@ export function decrementStack(player) {
     const playerEquipmentComponent = player.getComponent(EntityComponentTypes.Equippable)
     let playerItem = playerEquipmentComponent.getEquipment(EquipmentSlot.Mainhand)
 
-    let newItemStack = playerItem.clone();
-    newItemStack.amount -= 1;
+    if (playerItem == undefined) return
 
-    playerEquipmentComponent.setEquipment(EquipmentSlot.Mainhand, newItemStack);
+    if (playerItem.amount > 1) {
+        let newItemStack = playerItem.clone();
+        newItemStack.amount -= 1;
+
+        playerEquipmentComponent.setEquipment(EquipmentSlot.Mainhand, newItemStack);
+    } else {
+        playerEquipmentComponent.setEquipment(EquipmentSlot.Mainhand, undefined);
+    }
 }
 
 /** Gets the Player's cardinal facing direction 

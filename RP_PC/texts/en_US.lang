@@ -34,6 +34,8 @@ item.mco_santa:red_ornament=Red Christmas Ornament
 ## Entities ##
 entity.mco_santa:mini_santa.name=Mini Santa
 item.spawn_egg.entity.mco_santa:mini_santa.name=Mini Santa Spawn Egg
+entity.mco_santa:nutcracker.name=Nutcracker
+item.mco_santa:nutcracker=Nutcracker
 
 ## UI ##
 mco_santa:itemGroup.name.presents=Presents

@@ -1,0 +1,50 @@
+{
+    "format_version": "1.21.51",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mco_santa:nutcracker",
+
+            "render_controllers": [ "controller.render.default" ],
+
+            "geometry": { "default": "geometry.mco_santa.nutcracker" },
+            "textures": { "default": "textures/mco/santa/entity/nutcracker" },
+            "materials": { "default": "entity_alphatest" },
+
+            "scripts": {
+                "initialize": [
+                    "variable.nutcracker_has_target = 0.0;",
+                    "variable.attackbodyroty = 0.0;"
+                ],
+                "pre_animation": [
+                    "variable.nutcracker_has_target = query.property('mco_santa:entity.has_target');",
+                    "variable.attackbodyroty = Math.sin(Math.sqrt(variable.attack_time) * 360.0) * 11.46;"
+                ],
+
+                "animate": [ "ctrl.movement", "ctrl.attack", "anim.scale_item" ]
+            },
+
+            "enable_attachables": true,
+
+            "animations": {
+                "ctrl.movement": "controller.animation.mco_santa.nutcracker.movement",
+                "ctrl.attack": "controller.animation.mco_santa.nutcracker.attack",
+
+                "anim.scale_item": "animation.mco_santa.nutcracker.scale_item",
+
+                "anim.marching_arms": "animation.mco_santa.nutcracker.marching.arms",
+                "anim.marching_body": "animation.mco_santa.nutcracker.marching.body",
+                "anim.idle_event": "animation.mco_santa.nutcracker.idle_event",
+
+                "anim.acquired_target": "animation.mco_santa.nutcracker.acquired_target",
+                "anim.lost_target": "animation.mco_santa.nutcracker.lost_target",
+                "anim.has_target": "animation.mco_santa.nutcracker.has_target",
+
+                "anim.attack": "animation.mco_santa.nutcracker.attack"
+            },
+
+            "sound_effects": {
+                "spin": "item.spyglass.use"
+            }
+        }
+    }
+}

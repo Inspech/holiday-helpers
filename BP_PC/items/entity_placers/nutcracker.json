@@ -1,0 +1,24 @@
+{
+    "format_version": "1.21.51",
+    "minecraft:item": {
+        "description": {
+            "identifier": "mco_santa:nutcracker",
+            "menu_category": { "category": "items" }
+        },
+
+        "components": {
+            "minecraft:icon": {
+                "textures": { "default": "mco_santa:nutcracker" }
+            },
+
+            "minecraft:custom_components": [ "mco_santa:nutcracker.placement" ],
+
+            "minecraft:stacked_by_data": true,
+            "minecraft:durability": { "max_durability": 25 },
+
+            "minecraft:tags": {
+                "tags": [ "mco_santa:nutcracker", "mco_santa:entity_placers" ]
+            }
+        }
+    }
+}
