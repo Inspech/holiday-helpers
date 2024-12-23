@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.50",
+    "format_version": "1.21.51",
     "minecraft:block": {
         "description": {
             "identifier": "mco_santa:fireplace",
@@ -48,23 +48,24 @@
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 5 },
             "minecraft:destructible_by_explosion": { "explosion_resistance": 6 },
 
-            "minecraft:redstone_conductivity": { "redstone_conductor": true },
+            "minecraft:redstone_conductivity": { "redstone_conductor": true }
 
-            "minecraft:item_visual": {
-                "geometry": "minecraft:geometry.full_block",
-                "material_instances": {
-                    "south": { "texture": "mco_santa:fireplace.front.empty" },
+            // NOTE - EXPERIMENTAL | UPCOMING CREATOR FEATURES
+            // "minecraft:item_visual": {
+            //     "geometry": "minecraft:geometry.full_block",
+            //     "material_instances": {
+            //         "south": { "texture": "mco_santa:fireplace.front.empty" },
 
-                    "*": {
-                        "ambient_occlusion": true, "face_dimming": true,
-                        "texture": "brick", "render_method": "opaque"
-                    },
+            //         "*": {
+            //             "ambient_occlusion": true, "face_dimming": true,
+            //             "texture": "brick", "render_method": "opaque"
+            //         },
 
-                    "west": { "texture": "mco_santa:fireplace.side.east" },
-                    "east": { "texture": "mco_santa:fireplace.side.west" },
-                    "up": { "texture": "mco_santa:fireplace.top.mirrored" }
-                }
-            }
+            //         "west": { "texture": "mco_santa:fireplace.side.east" },
+            //         "east": { "texture": "mco_santa:fireplace.side.west" },
+            //         "up": { "texture": "mco_santa:fireplace.top.mirrored" }
+            //     }
+            // }
         },
 
         "permutations": [

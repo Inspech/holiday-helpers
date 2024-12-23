@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.50",
+    "format_version": "1.21.51",
     "minecraft:block": {
         "description": {
             "identifier": "mco_santa:chimney",
@@ -35,15 +35,16 @@
 
             "minecraft:custom_components": [ "mco_santa:chimney.placement", "mco_santa:block.placement.SFX" ],
 
-            "minecraft:item_visual": {
-                "geometry": "geometry.mco_santa.chimney.top",
-                "material_instances": {
-                    "*": {
-                        "ambient_occlusion": true, "face_dimming": true,
-                        "texture": "mco_santa:chimney", "render_method": "opaque"
-                    }
-                }
-            },
+            // NOTE - EXPERIMENTAL | UPCOMING CREATOR FEATURES
+            // "minecraft:item_visual": {
+            //     "geometry": "geometry.mco_santa.chimney.top",
+            //     "material_instances": {
+            //         "*": {
+            //             "ambient_occlusion": true, "face_dimming": true,
+            //             "texture": "mco_santa:chimney", "render_method": "opaque"
+            //         }
+            //     }
+            // },
 
             "tag:minecraft:is_pickaxe_item_destructible": { },
             "tag:stone": { },
