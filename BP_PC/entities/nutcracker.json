@@ -3,7 +3,7 @@
     "minecraft:entity": {
         "description": {
             "identifier": "mco_santa:nutcracker",
-            "is_spawnable": true, "is_summonable": true,
+            "is_spawnable": false, "is_summonable": true,
 
             "properties": {
                 "mco_santa:entity.has_target": { "client_sync": true, "default": false, "type": "bool" }
@@ -134,6 +134,7 @@
             "minecraft:leashable": { "soft_distance": 4.0, "hard_distance": 6.0, "max_distance": 10.0 },
             "minecraft:breathable": { "totalSupply": 15, "suffocateTime": 0 },
             "minecraft:is_hidden_when_invisible": { },
+            "minecraft:annotation.open_door": { },
             "minecraft:persistent": { },
             "minecraft:follow_range": { "value": 64 },
             "minecraft:hurt_on_condition": {
@@ -145,12 +146,13 @@
                 ]
             },
             "minecraft:damage_sensor": {
-                "triggers": { "cause": "fall", "deals_damage": "no" }
+                "triggers": [
+                    { "cause": "fall", "deals_damage": "no" },
+                    { "cause": "fire", "damage_multiplier": 1.67 }
+                ]
             },
-
-            "minecraft:annotation.break_door": {
-                "break_time": 30,
-                "min_difficulty": "normal"
+            "minecraft:mob_effect_immunity": {
+                "mob_effects": [ "poison", "fatal_poison" ]
             },
 
             "minecraft:on_target_acquired": {
