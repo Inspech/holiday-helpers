@@ -18,6 +18,8 @@ export default {
         const player = event.player, playerItem = getPlayerItem(player)
         const blockIsLitState = blockPermutation.getState(fireplaceBlockConfig.blockIsLitState)
 
+        // TODO: Add damage to held item on successful light/douse
+
         switch (true) {
             // No held item
             case playerItem == undefined: return

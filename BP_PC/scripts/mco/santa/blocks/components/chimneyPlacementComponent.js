@@ -5,7 +5,6 @@ import { BlockPermutation } from "@minecraft/server"
 import { allLateralNeighboursSolid } from "../../../0utilities/blockFunctions.js"
 
 import { chimneyBlockConfig } from "../../0config/blocks/chimney.js"
-import { warnDevelopersInChat } from "../../../0utilities/debug.js"
 
 // NOTE: This is the messiest part of the project, I have a MASSIVE migraine and I don't care that much to fix this lul
 
