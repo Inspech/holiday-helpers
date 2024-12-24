@@ -4,6 +4,7 @@ export const nutcrackerEntityConfig = {
 
     marchingMovementBreakDuration: 0.5,
 
-    turnedIntoItemSFX: 'mob.goat.horn_break'
+    turnedIntoItemSFX: 'mob.goat.horn_break',
+    equippedItemSFX: 'random.pop'
 }
 

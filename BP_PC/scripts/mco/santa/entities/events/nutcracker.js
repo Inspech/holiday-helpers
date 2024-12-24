@@ -1,7 +1,8 @@
 /** @import {Entity} from "@minecraft/server" */
-import { Entity, EntityComponentTypes, ItemComponentTypes, ItemStack } from "@minecraft/server"
+import { Entity, EntityComponentTypes, EquipmentSlot, ItemComponentTypes, ItemStack } from "@minecraft/server"
 
 import { nutcrackerEntityConfig } from "../../0config/entities/nutcracker.js"
+
 
 /** Event for the special breaks in movement to (loosely) align with the Nutcracker entity marching animation
  * @param {Entity} entity */

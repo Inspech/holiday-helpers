@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.51",
+    "minecraft:item": {
+        "description": {
+            "identifier": "mco_santa:eggnog",
+            "menu_category": { "category": "equipment", "group": "itemGroup.name.miscFood" }
+        },
+
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "textures": { "default": "mco_santa:eggnog" }
+            },
+
+            "minecraft:use_modifiers": { "movement_modifier": 0.6, "use_duration": 2 },
+            "minecraft:use_animation": "drink",
+            "minecraft:food": {
+                "can_always_eat": true,
+                "nutrition": 3,
+                "saturation_modifier": 6.0,
+                "using_converts_to": "minecraft:glass_bottle"
+            },
+
+            "minecraft:custom_components": [ "mco_santa:food_item.consume" ],
+
+            "minecraft:tags": { "tags": [ "mco_santa:eggnog" ] }
+        }
+    }
+}

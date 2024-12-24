@@ -26,6 +26,10 @@ tile.mco_santa:red_ornament.name=Red Christmas Ornament
 item.mco_santa:red_ornament=Red Christmas Ornament
 
 ## Items ##
+item.mco_santa:candy_cane=Candy Cane
+item.mco_santa:eggnog=Eggnog
+item.mco_santa:gingerbread_cookie=Gingerbread Cookie
+item.mco_santa:hot_cocoa=Hot Cocoa
 
 ## Entities ##
 entity.mco_santa:mini_santa.name=Mini Santa

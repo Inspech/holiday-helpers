@@ -3,6 +3,11 @@
     "texture_name": "atlas.items",
 
     "texture_data": {
+        "mco_santa:candy_cane": { "textures": "textures/mco/santa/items/candy_cane" },
+        "mco_santa:eggnog": { "textures": "textures/mco/santa/items/eggnog" },
+        "mco_santa:gingerbread_cookie": { "textures": "textures/mco/santa/items/gingerbread_cookie" },
+        "mco_santa:hot_cocoa": { "textures": "textures/mco/santa/items/hot_cocoa" },
+
         "mco_santa:ornament.blue": { "textures": "textures/mco/santa/items/ornament/blue" },
         "mco_santa:ornament.green": { "textures": "textures/mco/santa/items/ornament/green" },
         "mco_santa:ornament.purple": { "textures": "textures/mco/santa/items/ornament/purple" },

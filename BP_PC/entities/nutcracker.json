@@ -172,7 +172,7 @@
             // TODO: Add Candy Cane item
             "minecraft:tameable": {
                 "probability": 1,
-                "tame_items": [ "minecraft:stick" ]
+                "tame_items": [ "mco_santa:candy_cane" ]
             },
             "minecraft:healable": {
                 "items": [
@@ -180,21 +180,24 @@
                 ]
             },
             "minecraft:interact": {
-                "interactions": {
-                    "vibration": "shear",
-                    "swing": true,
-                    "interact_text": "action.interact.mco_santa:nutcracker.interact",
-                    "on_interact": {
-                        "filters": {
-                            "all_of": [
-                                { "test": "is_family", "subject": "other", "value": "player" },
-                                { "test": "is_owner", "subject": "other" }
-                            ]
-                        },
-                        "event": "mco_santa:nutcracker.turn_into_item",
-                        "target": "self"
+                "interactions": [
+                    {
+                        "vibration": "shear",
+                        "swing": true,
+                        "interact_text": "action.interact.mco_santa:nutcracker.interact",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    { "test": "is_family", "subject": "other", "value": "player" },
+                                    { "test": "is_sneaking", "subject": "other", "value": true },
+                                    { "test": "is_owner", "subject": "other" }
+                                ]
+                            },
+                            "event": "mco_santa:nutcracker.turn_into_item",
+                            "target": "self"
+                        }
                     }
-                }
+                ]
             },
 
             "minecraft:conditional_bandwidth_optimization": { },
