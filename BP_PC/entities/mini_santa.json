@@ -8,7 +8,7 @@
             "properties": {
                 "mco_santa:initialised": { "client_sync": true, "default": false, "type": "bool" },
                 "mco_santa:santa.has_nightly_present": {
-                    "client_sync": false, "default": false, "type": "bool"
+                    "client_sync": true, "default": false, "type": "bool"
                 },
                 "mco_santa:santa.skin_variant": {
                     "client_sync": true,
@@ -26,7 +26,7 @@
             "minecraft:collision_box": { "height": 1.15, "width": 0.55 },
             "minecraft:health": { "value": 20 },
 
-            "minecraft:movement": { "value": 0.3 },
+            "minecraft:movement": { "value": 0.233 },
             "minecraft:balloonable": { "mass": 0.5 },
 
             // Movement and Navigation //
@@ -35,6 +35,14 @@
             "minecraft:movement.basic": { },
             "minecraft:can_climb": { },
 
+            "minecraft:behavior.tempt": {
+                "priority": 1,
+                "speed_multiplier": 0.75,
+                "items": [
+                    "minecraft:cookie",
+                    "minecraft:milk_bucket"
+                ]
+            },
             "minecraft:behavior.panic": {
                 "priority": 2,
                 "speed_multiplier": 1.25,
@@ -45,12 +53,7 @@
                 "priority": 3
             },
             "minecraft:behavior.random_stroll": {
-                "priority": 4, "speed_multiplier": 0.45
-            },
-            "minecraft:behavior.follow_owner": {
-                "priority": 5,
-                "speed_multiplier": 1.0, "start_distance": 10,
-                "stop_distance": 2
+                "priority": 4, "speed_multiplier": 0.66
             },
             "minecraft:behavior.avoid_mob_type": {
                 "priority": 6,
@@ -128,7 +131,7 @@
         "component_groups": {
             "mini_santa:timer_to_initialise": {
                 "minecraft:timer": {
-                    "time": 0.125, "looping": false,
+                    "time": 4.0, "looping": false,
                     "time_down_event": { "event": "mco_santa:mini_santa.set_initialised", "target": "self" }
                 }
             },
@@ -136,11 +139,69 @@
             "mini_santa:has_nightly_present": {
                 "minecraft:timer": {
                     "randomInterval": true,
-                    "time": [ 30, 120 ], "looping": false,
+                    "time": [ 2, 3 ], "looping": true,
                     "time_down_event": {
-                        "event": "mco_santa:mini_santa.gift_owner",
+                        "event": "mco_santa:mini_santa.attempt_gift_owner",
                         "target": "self"
                     }
+                }
+            },
+
+            "mini_santa:move_to_nearest_player": {
+                "minecraft:environment_sensor": {
+                    "triggers": [
+                        {
+                            "filters": { "test": "distance_to_nearest_player", "operator": "<", "value": 8 },
+                            "event": "mco_santa:mini_santa.gift_owner",
+                            "target": "self"
+                        }
+                    ]
+                },
+
+                "minecraft:behavior.look_at_target": {
+                    "priority": 0,
+                    "look_distance": 24,
+                    "probability": 1,
+                    "angle_of_view_vertical": 360,
+                    "angle_of_view_horizontal": 360,
+                    "look_time": 5
+                },
+
+                "minecraft:attack": { "damage": 0 },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 0,
+                    "track_target": true,
+                    "speed_multiplier": 1,
+                    "require_complete_path": true
+                },
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 1,
+                    "attack_owner": true,
+                    "must_reach": false, "must_see": false,
+                    "reselect_targets": true,
+                    "scan_interval": 10, "within_radius": 32,
+                    "entity_types": [
+                        {
+                            "priority": 0, "max_dist": 32,
+                            "walk_speed_multiplier": 1.125, "sprint_speed_multiplier": 1.125,
+                            "filters": {
+                                "all_of": [
+                                    { "test": "is_family", "subject": "other", "value": "player" },
+                                    { "test": "is_owner", "subject": "other", "value": true }
+                                ]
+                            }
+                        },
+                        {
+                            "priority": 1, "max_dist": 24,
+                            "walk_speed_multiplier": 1.125, "sprint_speed_multiplier": 1.125,
+                            "filters": {
+                                "all_of": [
+                                    { "test": "is_family", "subject": "other", "value": "player" },
+                                    { "test": "is_owner", "subject": "other", "value": false }
+                                ]
+                            }
+                        }
+                    ]
                 }
             }
         },
@@ -168,22 +229,37 @@
 
             "mco_santa:mini_santa.set_present_available.true": {
                 "set_property": { "mco_santa:santa.has_nightly_present": true },
-                "add": { "component_groups": [ "mini_santa:has_nightly_present" ] },
-                "queue_command": { "command": [ "say Santa has a gift for you!" ] }
+                "add": { "component_groups": [ "mini_santa:has_nightly_present" ] }
+            },
+
+            "mco_santa:mini_santa.attempt_gift_owner": {
+                "sequence": [
+                    {
+                        "filters": { "test": "is_daytime", "value": true },
+                        "trigger": "mco_santa:mini_santa.gift_timed_out"
+                    },
+                    { "add": { "component_groups": [ "mini_santa:move_to_nearest_player" ] } }
+                ]
             },
 
             "mco_santa:mini_santa.gift_owner": {
+                "remove": { "component_groups": [ "mini_santa:move_to_nearest_player" ] },
                 "queue_command": { "command": "scriptevent mco_santa:mini_santa give_gift" }
             },
 
             "mco_santa:mini_santa.gifted_owner": {
-                "trigger": "mco_santa:mini_santa.set_present_available.false"
+                "trigger": "mco_santa:mini_santa.set_present_available.false",
+                "remove": { "component_groups": [ "mini_santa:move_to_nearest_player" ] }
+            },
+
+            "mco_santa:mini_santa.gift_timed_out": {
+                "trigger": "mco_santa:mini_santa.set_present_available.false",
+                "remove": { "component_groups": [ "mini_santa:move_to_nearest_player" ] }
             },
 
             "mco_santa:mini_santa.set_present_available.false": {
                 "set_property": { "mco_santa:santa.has_nightly_present": false },
-                "remove": { "component_groups": [ "mini_santa:has_nightly_present" ] },
-                "queue_command": { "command": [ "say Santa no longer has a gift for you" ] }
+                "remove": { "component_groups": [ "mini_santa:has_nightly_present" ] }
             }
         }
     }
