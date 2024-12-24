@@ -61,14 +61,14 @@ export default {
 
         // List of events to trigger
         switch (true) {
-            case randomNumber > 0 && randomNumber <= 33: // % Chance
+            case randomNumber > 0 && randomNumber <= 25: // % Chance
                 fireplaceEmitParticleEvent(block, blockParticleLocator, fireplaceBlockConfig.flameVFX); break
-            case randomNumber > 33 && randomNumber <= 66: // % Chance
+            case randomNumber > 25 && randomNumber <= 50: // % Chance
                 fireplaceEmitParticleEvent(block, blockParticleLocator, fireplaceBlockConfig.smokeVFX); break
-            case randomNumber > 66 && randomNumber <= 90: // % Chance
+            case randomNumber > 50 && randomNumber <= 70: // % Chance
                 fireplaceEmitSoundEvent(block, fireplaceBlockConfig.flameSFX); break
 
-            case randomNumber > 90: // % Chance
+            case randomNumber > 70: // % Chance
                 fireplaceGiveBirthToSanta(block, blockInFront, blockRotationState); break
         }
     }
