@@ -11,7 +11,14 @@
 
             "textures": [ "Array.skin_variants[variable.skin_variant]" ],
             "geometry": "Geometry.default",
-            "materials": [ { "*": "material.default" } ]
+            "materials": [
+                { "*": "material.default" },
+                { "indicator": "material.emissive" }
+            ],
+
+            "part_visibility": [
+                { "indicator": "variable.has_present" }
+            ]
         }
     }
 }

@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.mco_santa.common.blink": {
+            "loop": true, "animation_length": 0.125,
+            "loop_delay": "variable.blinking_loop_delay",
+            "bones": {
+                "closedEye": {
+                    "position": [ 0, 0, -0.125 ]
+                }
+            }
+        }
+    }
+}

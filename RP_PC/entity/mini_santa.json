@@ -13,26 +13,37 @@
                 "two": "textures/mco/santa/entity/mini_santa.2",
                 "three": "textures/mco/santa/entity/mini_santa.3"
             },
-            "materials": { "default": "entity_alphatest" },
+            "materials": {
+                "default": "entity_alphatest",
+                "emissive": "entity_emissive_alpha"
+            },
 
             "spawn_egg": { "texture": "mco_santa:spawn_egg", "texture_index": 0 },
 
             "scripts": {
                 "initialize": [
                     "variable.initialised = 0.0;",
-                    "variable.skin_variant = 0.0;"
+                    "variable.skin_variant = 0.0;",
+                    "variable.has_present = 0.0;",
+
+                    "variable.blinking_loop_delay = 0.0;"
                 ],
 
                 "pre_animation": [
                     "variable.initialised = query.property('mco_santa:initialised');",
-                    "variable.skin_variant = query.property('mco_santa:santa.skin_variant');"
+                    "variable.skin_variant = query.property('mco_santa:santa.skin_variant');",
+                    "variable.has_present = query.property('mco_santa:santa.has_nightly_present');",
+
+                    "variable.blinking_loop_delay = math.Random(1, 3);"
                 ],
 
-                "animate": [ "ctrl.movement", "anim.look_at_target" ]
+                "animate": [ "ctrl.movement", "ctrl.blinking", "ctrl.look_at_target", "anim.present_indicator_movement" ]
             },
 
             "animations": {
                 "ctrl.movement": "controller.animation.mco_santa.mini_santa.movement",
+                "ctrl.look_at_target": "controller.animation.mco_santa.mini_santa.look_at_target",
+                "ctrl.blinking": "controller.animation.mco_santa.mini_santa.blinking",
 
                 "anim.spawn_from_chimney": "animation.mco_santa.mini_santa.spawn_from_chimney",
 
@@ -41,8 +52,12 @@
                 "anim.dancing": "animation.mco_santa.mini_santa.dancing",
                 "anim.waving": "animation.mco_santa.mini_santa.waving",
 
+                "anim.blink": "animation.mco_santa.common.blink",
 
-                "anim.look_at_target": "animation.common.look_at_target"
+
+                "anim.look_at_target": "animation.common.look_at_target",
+
+                "anim.present_indicator_movement": "animation.mco_santa.mini_santa.present_indicator_movement"
             }
         }
     }

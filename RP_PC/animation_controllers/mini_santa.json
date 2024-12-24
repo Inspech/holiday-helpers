@@ -40,6 +40,30 @@
 				}
 
 			}
+		},
+
+		"controller.animation.mco_santa.mini_santa.look_at_target": {
+			"initial_state": "preinitialisation",
+
+			"states": {
+				"preinitialisation": {
+					"transitions": [
+						{ "default": "variable.initialised" }
+					]
+				},
+				"default": {
+					"animations": [ "anim.look_at_target" ]
+				}
+			}
+		},
+
+		"controller.animation.mco_santa.mini_santa.blinking": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [ "anim.blink" ]
+				}
+			}
 		}
 	}
 }
