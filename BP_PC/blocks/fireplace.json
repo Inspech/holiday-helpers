@@ -97,7 +97,7 @@
             {
                 "condition": "query.block_state('mco_santa:block.is_lit')",
                 "components": {
-                    "minecraft:light_emission": 15,
+                    "minecraft:light_emission": 10,
 
                     "minecraft:material_instances": {
                         "north": {
