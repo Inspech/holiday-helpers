@@ -14,7 +14,7 @@
             "minecraft:custom_components": [ "mco_santa:nutcracker.placement" ],
 
             "minecraft:stacked_by_data": true,
-            "minecraft:durability": { "max_durability": 25 },
+            "minecraft:durability": { "max_durability": 50 },
 
             "minecraft:tags": {
                 "tags": [ "mco_santa:nutcracker", "mco_santa:entity_placers" ]
