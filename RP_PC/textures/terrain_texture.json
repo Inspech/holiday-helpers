@@ -5,14 +5,29 @@
 
     "texture_data": {
         // Presents
-        "mco_santa:present.blue": { "textures": "textures/mco/santa/blocks/present/blue" },
-        "mco_santa:present.blue.particle": { "textures": "textures/mco/santa/blocks/present/blue.particle" },
-        "mco_santa:present.gold": { "textures": "textures/mco/santa/blocks/present/gold" },
-        "mco_santa:present.gold.particle": { "textures": "textures/mco/santa/blocks/present/gold.particle" },
-        "mco_santa:present.green": { "textures": "textures/mco/santa/blocks/present/green" },
-        "mco_santa:present.green.particle": { "textures": "textures/mco/santa/blocks/present/green.particle" },
-        "mco_santa:present.red": { "textures": "textures/mco/santa/blocks/present/red" },
-        "mco_santa:present.red.particle": { "textures": "textures/mco/santa/blocks/present/red.particle" },
+        "mco_santa:present.blue.side": { "textures": "textures/mco/santa/blocks/present/blue/side" },
+        "mco_santa:present.blue.bottom": { "textures": "textures/mco/santa/blocks/present/blue/bottom" },
+        "mco_santa:present.blue.top": { "textures": "textures/mco/santa/blocks/present/blue/top" },
+        "mco_santa:present.blue.bow": { "textures": "textures/mco/santa/blocks/present/blue/bow" },
+        "mco_santa:present.blue.particle": { "textures": "textures/mco/santa/blocks/present/blue/side" },
+
+        "mco_santa:present.gold.side": { "textures": "textures/mco/santa/blocks/present/gold/side" },
+        "mco_santa:present.gold.bottom": { "textures": "textures/mco/santa/blocks/present/gold/bottom" },
+        "mco_santa:present.gold.top": { "textures": "textures/mco/santa/blocks/present/gold/top" },
+        "mco_santa:present.gold.bow": { "textures": "textures/mco/santa/blocks/present/gold/bow" },
+        "mco_santa:present.gold.particle": { "textures": "textures/mco/santa/blocks/present/gold/side" },
+
+        "mco_santa:present.green.side": { "textures": "textures/mco/santa/blocks/present/green/side" },
+        "mco_santa:present.green.bottom": { "textures": "textures/mco/santa/blocks/present/green/bottom" },
+        "mco_santa:present.green.top": { "textures": "textures/mco/santa/blocks/present/green/top" },
+        "mco_santa:present.green.bow": { "textures": "textures/mco/santa/blocks/present/green/bow" },
+        "mco_santa:present.green.particle": { "textures": "textures/mco/santa/blocks/present/green/side" },
+
+        "mco_santa:present.red.side": { "textures": "textures/mco/santa/blocks/present/red/side" },
+        "mco_santa:present.red.bottom": { "textures": "textures/mco/santa/blocks/present/red/bottom" },
+        "mco_santa:present.red.top": { "textures": "textures/mco/santa/blocks/present/red/top" },
+        "mco_santa:present.red.bow": { "textures": "textures/mco/santa/blocks/present/red/bow" },
+        "mco_santa:present.red.particle": { "textures": "textures/mco/santa/blocks/present/red/side" },
 
         // Fireplace
         "mco_santa:fireplace.bricks": { "textures": "textures/mco/santa/blocks/fireplace/bricks" },

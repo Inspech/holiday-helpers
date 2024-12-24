@@ -15,11 +15,20 @@
                 "culling": "mco_santa:present"
             },
             "minecraft:material_instances": {
-                "down": { "texture": "mco_santa:present.green.particle", "render_method": "alpha_test" },
-                "bow": { "ambient_occlusion": false, "face_dimming": false, "render_method": "alpha_test" },
-                "*": {
-                    "ambient_occlusion": true, "face_dimming": true,
-                    "texture": "mco_santa:present.green", "render_method": "alpha_test"
+                "*": { "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+
+                "nnn": { "texture": "mco_santa:present.green.side", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+                "eee": { "texture": "mco_santa:present.green.side", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+                "sss": { "texture": "mco_santa:present.green.side", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+                "www": { "texture": "mco_santa:present.green.side", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+
+                "bbb": { "texture": "mco_santa:present.green.bottom", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+                "ttt": { "texture": "mco_santa:present.green.top", "render_method": "alpha_test", "ambient_occlusion": true, "face_dimming": true },
+
+                "down": { "texture": "mco_santa:present.green.particle", "render_method": "alpha_test", "ambient_occlusion": false, "face_dimming": false },
+                "bow": {
+                    "ambient_occlusion": false, "face_dimming": false,
+                    "texture": "mco_santa:present.green.bow", "render_method": "alpha_test"
                 }
             },
 
@@ -31,7 +40,7 @@
             "minecraft:flammable": true,
             "minecraft:loot": "loot_tables/empty.json",
 
-            "minecraft:destructible_by_mining": { "seconds_to_destroy": 2.5 },
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 0.5 },
             "minecraft:destructible_by_explosion": { "explosion_resistance": 1.0 }
         }
     }
