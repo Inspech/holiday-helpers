@@ -17,6 +17,6 @@
             "B": { "item": "minecraft:brick_block" }
         },
 
-        "result": { "item": "mco_santa:chimney" }
+        "result": { "item": "mco_santa:chimney", "count": 4 }
     }
 }

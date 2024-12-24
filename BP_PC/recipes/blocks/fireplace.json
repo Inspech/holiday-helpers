@@ -15,7 +15,7 @@
         ],
         "key": {
             "G": { "item": "minecraft:polished_granite_slab" },
-            "B": { "item": "minecraft:brick_block" },
+            "B": { "item": "minecraft:brick" },
             "I": { "item": "minecraft:iron_bars" }
         },
 
