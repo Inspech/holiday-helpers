@@ -8,7 +8,6 @@
 
         "components": {
             "minecraft:max_stack_size": 1,
-            "minecraft:hand_equipped": true,
             "minecraft:icon": {
                 "textures": { "default": "mco_santa:hot_cocoa" }
             },
