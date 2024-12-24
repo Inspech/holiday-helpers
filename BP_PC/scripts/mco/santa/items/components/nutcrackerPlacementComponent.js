@@ -1,6 +1,6 @@
 /** @import {ItemCustomComponentRegistration} from "../index.js" */
 
-import { EntityComponentTypes, ItemComponentTypes } from "@minecraft/server"
+import { EntityComponentTypes, ItemComponentTypes, GameMode, system } from "@minecraft/server"
 import { getTargetBlockFromFace, playSoundOnBlockItemPlacement } from "../../../0utilities/blockFunctions.js"
 
 import { decrementStack, getPlayerCardinalFacing } from "../../../0utilities/playerFunctions.js"
@@ -17,17 +17,23 @@ export default {
 
         const entitySpawnLocation = block.bottomCenter()
 
-        decrementStack(source)
+        if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
 
-        const entityToSpawn = itemDimension.spawnEntity(item.typeId, entitySpawnLocation)
         const playerRotation = getPlayerCardinalFacing(source)
         let entityRotation = entityRotationFromBlockRotation(playerRotation)
+        const entityToSpawn = itemDimension.spawnEntity(item.typeId, entitySpawnLocation)
+
+        // NOTE - EXPERIMENTAL | BETA APIs | 1.17.0-beta
+        // const entityToSpawn = itemDimension.spawnEntity(item.typeId, entitySpawnLocation, { initialRotation: entityRotation })
+
         const
             spawnedEntityTameComponent = entityToSpawn.getComponent(EntityComponentTypes.Tameable),
             entityHealthComponent = entityToSpawn.getComponent(EntityComponentTypes.Health)
 
         const itemDamage = item.getComponent(ItemComponentTypes.Durability).damage
         const healthToSet = entityHealthComponent.effectiveMax - itemDamage
+
+        entityToSpawn.setDynamicProperty('mco_santa:nutcracker.initial_rotation', entityRotation)
 
         entityHealthComponent.setCurrentValue(healthToSet)
         spawnedEntityTameComponent.tame(source)

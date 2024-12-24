@@ -25,6 +25,13 @@ export function nutcrackerAlignToHomeBlockEvent(entity) {
         y: entityHomeLocation.y,
         z: entityHomeLocation.z
     })
+
+    entity.setRotation(
+        {
+            x: 0,
+            y: entity.getDynamicProperty('mco_santa:nutcracker.initial_rotation')
+        }
+    )
 }
 
 /** Event for when the Player interacts with their Nutcracker
