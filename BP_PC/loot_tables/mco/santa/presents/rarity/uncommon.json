@@ -1,0 +1,31 @@
+{
+    "pools": [
+        {
+            "rolls": { "min": 3, "max": 4 },
+            "entries": [
+
+                // MCO_SANTA Items //
+                {
+                    "name": "mco_santa:candy_cane",
+                    "type": "item", "weight": 3, "count": 1
+                },
+
+                {
+                    "name": "loot_tables/mco/santa/presents/gifts/ornaments.json",
+                    "type": "loot_table", "weight": 1
+                },
+
+                {
+                    "name": "loot_tables/mco/santa/presents/gifts/festive_lanterns.json",
+                    "type": "loot_table", "weight": 1
+                },
+
+                // Minecraft Items //
+                {
+                    "name": "loot_tables/mco/santa/presents/gifts/coal.json",
+                    "type": "loot_table", "weight": 1
+                }
+            ]
+        }
+    ]
+}

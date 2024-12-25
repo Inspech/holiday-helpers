@@ -1,0 +1,37 @@
+{
+	"pools": [
+		{
+			"rolls": 4,
+			"entries": [
+				{
+					"name": "mco_santa:blue_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:creeper_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:green_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:purple_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:red_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:snowman_ornament",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:star_ornament",
+					"type": "item", "weight": 1, "count": 1
+				}
+			]
+		}
+	]
+}

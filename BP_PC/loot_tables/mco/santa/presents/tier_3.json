@@ -1,0 +1,13 @@
+{
+    "pools": [
+        {
+            "rolls": { "min": 1, "max": 2 },
+            "entries": [
+                {
+                    "name": "loot_tables/mco/santa/presents/rarity/rare.json",
+                    "type": "loot_table", "weight": 4
+                }
+            ]
+        }
+    ]
+}
