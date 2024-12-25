@@ -1,11 +1,14 @@
 /** @import {ItemCustomComponentRegistration} from "../index.js" */
 
-import { BlockPermutation } from '@minecraft/server'
+import { BlockPermutation, GameMode } from '@minecraft/server'
 
 import { replaceableBlocks } from '../../../0data/vanilla.js'
 
 import { lanternsBlockConfig } from "../../0config/blocks/lanterns.js"
 import { getTargetBlockFromFace, playSoundOnBlockItemPlacement } from "../../../0utilities/blockFunctions.js"
+
+import { decrementStack } from "../../../0utilities/playerFunctions.js"
+
 
 /** Special placement considerations for the Lantern-type blocks
  * @type {ItemCustomComponentRegistration} **/
@@ -61,5 +64,6 @@ export default {
                 break
 
         }
+        if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
     }
 }

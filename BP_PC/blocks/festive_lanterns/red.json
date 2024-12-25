@@ -42,6 +42,8 @@
                 "size": [ 6, 8, 6 ]
             },
 
+            "minecraft:loot": "loot_tables/mco/santa/blocks/festive_lanterns/red.json",
+
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 0 },
 
             "minecraft:redstone_conductivity": { "redstone_conductor": false }
