@@ -1,12 +1,17 @@
 {
-    "format_version": "1.21.51",
+    "format_version": "1.21.50",
     "minecraft:entity": {
         "description": {
             "identifier": "mco_santa:nutcracker",
             "is_spawnable": false, "is_summonable": true,
 
             "properties": {
-                "mco_santa:entity.has_target": { "client_sync": true, "default": false, "type": "bool" }
+                "mco_santa:entity.has_target": { "client_sync": true, "default": false, "type": "bool" },
+                "mco_santa:nutcracker.skin_variant": {
+                    "client_sync": true,
+                    "type": "int", "default": 0,
+                    "range": [ 0, 3 ]
+                }
             },
 
             "scripts": { "animate": [ "ctrl.movement" ] },
@@ -236,7 +241,12 @@
 
         "events": {
             "minecraft:entity_spawned": {
-                "add": { "component_groups": [ "nutcracker:has_no_target" ] }
+                "add": { "component_groups": [ "nutcracker:has_no_target" ] },
+                "trigger": "mco_santa:nutcracker.randomize_variant"
+            },
+
+            "mco_santa:nutcracker.randomize_variant": {
+                "set_property": { "mco_santa:nutcracker.skin_variant": "math.random_integer(0, 3)" }
             },
 
             "mco_santa:nutcracker.gain_target": {
