@@ -52,12 +52,18 @@ export default {
     },
 
     [lanternsBlockConfig.blockIDs[7]]: {
-        "sound": 'use.lantern'
+        "sound": 'block.lantern.place'
     },
     [lanternsBlockConfig.blockIDs[8]]: {
-        "sound": 'use.lantern'
+        "sound": 'block.lantern.place'
     },
     [lanternsBlockConfig.blockIDs[9]]: {
-        "sound": 'use.lantern'
+        "sound": 'block.lantern.place'
+    },
+    [lanternsBlockConfig.blockIDs[10]]: {
+        "sound": 'block.lantern.place'
+    },
+    [lanternsBlockConfig.blockIDs[11]]: {
+        "sound": 'block.lantern.place'
     },
 }

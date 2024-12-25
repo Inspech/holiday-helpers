@@ -48,8 +48,10 @@
         // Festive Lantern
         "mco_santa:festive_lantern.particle": { "textures": "textures/mco/santa/blocks/festive_lantern/particle" },
         "mco_santa:festive_lantern.default": { "textures": "textures/mco/santa/blocks/festive_lantern/default" },
+        "mco_santa:festive_lantern.blue": { "textures": "textures/mco/santa/blocks/festive_lantern/blue" },
         "mco_santa:festive_lantern.green": { "textures": "textures/mco/santa/blocks/festive_lantern/green" },
         "mco_santa:festive_lantern.red": { "textures": "textures/mco/santa/blocks/festive_lantern/red" },
+        "mco_santa:festive_lantern.white": { "textures": "textures/mco/santa/blocks/festive_lantern/white" },
 
         // Ornaments
         "mco_santa:ornament.blue": { "textures": "textures/mco/santa/blocks/ornament/blue" },

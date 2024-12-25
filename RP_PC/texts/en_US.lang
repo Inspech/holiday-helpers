@@ -33,10 +33,14 @@ item.mco_santa:star_ornament=Star Christmas Ornament
 
 tile.mco_santa:festive_lantern.name=Festive Lantern
 item.mco_santa:festive_lantern=Festive Lantern
+tile.mco_santa:blue_festive_lantern.name=Blue Festive Lantern
+item.mco_santa:blue_festive_lantern=Blue Festive Lantern
 tile.mco_santa:red_festive_lantern.name=Red Festive Lantern
 item.mco_santa:red_festive_lantern=Red Festive Lantern
 tile.mco_santa:green_festive_lantern.name=Green Festive Lantern
 item.mco_santa:green_festive_lantern=Green Festive Lantern
+tile.mco_santa:white_festive_lantern.name=White Festive Lantern
+item.mco_santa:white_festive_lantern=White Festive Lantern
 
 ## Items ##
 item.mco_santa:candy_cane=Candy Cane

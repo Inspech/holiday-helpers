@@ -12,8 +12,10 @@
     "mco_santa:chimney": { "sound": "nether_brick" },
 
     "mco_santa:festive_lantern": { "sound": "lantern" },
+    "mco_santa:blue_festive_lantern": { "sound": "lantern" },
     "mco_santa:green_festive_lantern": { "sound": "lantern" },
     "mco_santa:red_festive_lantern": { "sound": "lantern" },
+    "mco_santa:white_festive_lantern": { "sound": "lantern" },
 
     "mco_santa:blue_ornament": { "sound": "glass" },
     "mco_santa:creeper_ornament": { "sound": "glass" },

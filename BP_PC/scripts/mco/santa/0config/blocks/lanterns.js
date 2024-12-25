@@ -13,8 +13,10 @@ export const lanternsBlockConfig = {
         'mco_santa:star_ornament',
 
         'mco_santa:festive_lantern',
+        'mco_santa:blue_festive_lantern',
         'mco_santa:green_festive_lantern',
         'mco_santa:red_festive_lantern',
+        'mco_santa:white_festive_lantern',
     ],
 
     /** The state of the Lantern block; 
