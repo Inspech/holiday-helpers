@@ -1,5 +1,5 @@
 /** @import {Block, BlockPermutation, DimensionLocation} from "@minecraft/server" */
-import { world } from "@minecraft/server"
+import { world, system } from "@minecraft/server"
 
 import { presentsBlockConfig } from "../../0config/blocks/presents.js"
 import data from "../../0config/blockData.js"
@@ -19,4 +19,8 @@ export function presentOpenedEvent(block, permutation) {
     if (assignedLootTable) { blockDimension.runCommand(`loot spawn ${commandPosition} loot "${assignedLootTable}"`) }
 
     blockDimension.runCommand(`setblock ${commandPosition} air destroy`)
+
+    for (let index = 0; index < 4; index++) {
+        blockDimension.spawnEntity('minecraft:xp_orb', targetPosition)
+    }
 }
