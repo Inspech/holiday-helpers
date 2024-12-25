@@ -141,6 +141,7 @@
             "minecraft:is_hidden_when_invisible": { },
             "minecraft:annotation.open_door": { },
             "minecraft:persistent": { },
+            "minecraft:knockback_resistance": { "value": 1 },
             "minecraft:follow_range": { "value": 64 },
             "minecraft:hurt_on_condition": {
                 "damage_conditions": [
