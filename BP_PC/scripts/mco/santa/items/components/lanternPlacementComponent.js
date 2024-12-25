@@ -32,6 +32,7 @@ export default {
                         [lanternsBlockConfig.blockHangingState]: true
                     })
                 )
+                if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
                 playSoundOnBlockItemPlacement(item, source); break
 
             default:
@@ -46,6 +47,7 @@ export default {
                             [lanternsBlockConfig.blockHangingState]: false
                         })
                     );
+                    if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
                     playSoundOnBlockItemPlacement(item, source)
                 }
                 else if (
@@ -59,11 +61,11 @@ export default {
                             [lanternsBlockConfig.blockHangingState]: true
                         })
                     );
+                    if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
                     playSoundOnBlockItemPlacement(item, source)
                 }
                 break
 
         }
-        if (source.getGameMode() != GameMode.creative) { decrementStack(source) }
     }
 }
