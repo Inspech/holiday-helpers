@@ -35,14 +35,6 @@
             "minecraft:movement.basic": { },
             "minecraft:can_climb": { },
 
-            "minecraft:behavior.tempt": {
-                "priority": 1,
-                "speed_multiplier": 0.75,
-                "items": [
-                    "minecraft:cookie",
-                    "minecraft:milk_bucket"
-                ]
-            },
             "minecraft:behavior.panic": {
                 "priority": 2,
                 "speed_multiplier": 1.25,
@@ -51,9 +43,6 @@
             },
             "minecraft:behavior.stay_while_sitting": {
                 "priority": 3
-            },
-            "minecraft:behavior.random_stroll": {
-                "priority": 4, "speed_multiplier": 0.66
             },
             "minecraft:behavior.avoid_mob_type": {
                 "priority": 6,
@@ -67,13 +56,6 @@
             },
             "minecraft:behavior.float": {
                 "priority": 7
-            },
-            "minecraft:behavior.random_look_around": {
-                "priority": 8
-            },
-            "minecraft:behavior.look_at_player": {
-                "priority": 8,
-                "target_distance": 6.0, "probability": 0.02
             },
 
             // General Behaviours //
@@ -89,6 +71,19 @@
                         "cause": "lava", "damage_per_tick": 4
                     }
                 ]
+            },
+
+            "minecraft:interact": {
+                "interactions": {
+                    "swing": true, "cooldown": 5, "vibration": "entity_interact",
+                    "on_interact": {
+                        "event": "mco_santa:mini_santa.attempt_gift_owner", "target": "self",
+                        "filters": [
+                            { "test": "bool_property", "domain": "mco_santa:santa.has_nightly_present", "subject": "self", "value": true },
+                            { "test": "is_owner", "subject": "other", "value": true }
+                        ]
+                    }
+                }
             },
 
             "minecraft:scheduler": {
@@ -113,14 +108,6 @@
                     { "item": "minecraft:milk_bucket", "heal_amount": 10 }
                 ]
             },
-            "minecraft:behavior.beg": {
-                "priority": 9,
-                "look_distance": 8, "look_time": [ 2, 4 ],
-                "items": [
-                    "minecraft:cookie",
-                    "minecraft:milk_bucket"
-                ]
-            },
 
             "minecraft:conditional_bandwidth_optimization": { },
             "minecraft:pushable": { "is_pushable": true, "is_pushable_by_piston": true },
@@ -129,10 +116,45 @@
         },
 
         "component_groups": {
+            "mini_santa:movement_enabled": {
+                "minecraft:behavior.tempt": {
+                    "priority": 1,
+                    "speed_multiplier": 0.75,
+                    "items": [
+                        "minecraft:cookie",
+                        "minecraft:milk_bucket"
+                    ]
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 4, "speed_multiplier": 0.66
+                },
+                "minecraft:behavior.random_look_around": {
+                    "priority": 8
+                },
+                "minecraft:behavior.look_at_player": {
+                    "priority": 8,
+                    "target_distance": 6.0, "probability": 0.02
+                },
+                "minecraft:behavior.beg": {
+                    "priority": 9,
+                    "look_distance": 8, "look_time": [ 2, 4 ],
+                    "items": [
+                        "minecraft:cookie",
+                        "minecraft:milk_bucket"
+                    ]
+                }
+            },
+
             "mini_santa:timer_to_initialise": {
+                "minecraft:damage_sensor": {
+                    "triggers": [ { "cause": "all", "deals_damage": "no" } ]
+                },
                 "minecraft:timer": {
-                    "time": 4.0, "looping": false,
-                    "time_down_event": { "event": "mco_santa:mini_santa.set_initialised", "target": "self" }
+                    "time": [ 4, 4 ], "looping": true,
+                    "time_down_event": {
+                        "event": "mco_santa:mini_santa.set_initialised",
+                        "target": "self"
+                    }
                 }
             },
 
@@ -209,14 +231,27 @@
         "events": {
             "minecraft:entity_spawned": {
                 "sequence": [
+                    { "trigger": "mco_santa:mini_santa.enable_movement" },
                     { "trigger": "mco_santa:mini_santa.set_initialised" },
+                    { "trigger": "mco_santa:mini_santa.add_random_look_component" },
                     { "trigger": "mco_santa:mini_santa.randomize_skin_colour" }
                 ]
             },
 
             "mco_santa:mini_santa.spawned_from_chimney": {
-                "trigger": "mco_santa:mini_santa.randomize_skin_colour",
+                "sequence": [
+                    // Im so over it rn
+                    { "queue_command": { "command": "event entity @s mco_santa:mini_santa.add_timer_to_initialise" } },
+                    { "queue_command": { "command": "event entity @s mco_santa:mini_santa.enable_movement" } },
+                    { "trigger": "mco_santa:mini_santa.randomize_skin_colour" }
+                ]
+            },
+
+            "mco_santa:mini_santa.add_timer_to_initialise": {
                 "add": { "component_groups": [ "mini_santa:timer_to_initialise" ] }
+            },
+            "mco_santa:mini_santa.enable_movement": {
+                "add": { "component_groups": [ "mini_santa:movement_enabled" ] }
             },
 
             "mco_santa:mini_santa.randomize_skin_colour": {
@@ -224,7 +259,8 @@
             },
 
             "mco_santa:mini_santa.set_initialised": {
-                "set_property": { "mco_santa:initialised": true }
+                "set_property": { "mco_santa:initialised": true },
+                "remove": { "component_groups": [ "mini_santa:timer_to_initialise" ] }
             },
 
             "mco_santa:mini_santa.set_present_available.true": {
