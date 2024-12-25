@@ -139,7 +139,7 @@
             "mini_santa:has_nightly_present": {
                 "minecraft:timer": {
                     "randomInterval": true,
-                    "time": [ 2, 3 ], "looping": true,
+                    "time": [ 10, 18 ], "looping": true,
                     "time_down_event": {
                         "event": "mco_santa:mini_santa.attempt_gift_owner",
                         "target": "self"
