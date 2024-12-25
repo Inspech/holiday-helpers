@@ -6,7 +6,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:iron_axe",
-                    "weight": 1,
+                    "weight": 6,
                     "functions": [
                         {
                             "function": "looting_enchant",
@@ -20,6 +20,11 @@
                             "chance": 0.125
                         }
                     ]
+                },
+                {
+                    "type": "item",
+                    "name": "mco_santa:candy_cane",
+                    "weight": 1
                 }
             ]
         }
