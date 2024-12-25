@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.51",
+    "format_version": "1.21.50",
     "minecraft:client_entity": {
         "description": {
             "identifier": "mco_santa:mini_santa",
@@ -8,10 +8,10 @@
 
             "geometry": { "default": "geometry.mco_santa.mini_santa" },
             "textures": {
-                "default": "textures/mco/santa/entity/mini_santa.0",
-                "one": "textures/mco/santa/entity/mini_santa.1",
-                "two": "textures/mco/santa/entity/mini_santa.2",
-                "three": "textures/mco/santa/entity/mini_santa.3"
+                "default": "textures/mco/santa/entity/mini_santa/0",
+                "one": "textures/mco/santa/entity/mini_santa/1",
+                "two": "textures/mco/santa/entity/mini_santa/2",
+                "three": "textures/mco/santa/entity/mini_santa/3"
             },
             "materials": {
                 "default": "entity_alphatest",

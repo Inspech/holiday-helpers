@@ -1,22 +1,31 @@
 {
-    "format_version": "1.21.51",
+    "format_version": "1.21.50",
     "minecraft:client_entity": {
         "description": {
             "identifier": "mco_santa:nutcracker",
 
-            "render_controllers": [ "controller.render.default" ],
+            "render_controllers": [ "controller.render.mco_santa.nutcracker" ],
 
             "geometry": { "default": "geometry.mco_santa.nutcracker" },
-            "textures": { "default": "textures/mco/santa/entity/nutcracker" },
+            "textures": {
+                "default": "textures/mco/santa/entity/nutcracker/0",
+                "one": "textures/mco/santa/entity/nutcracker/1",
+                "two": "textures/mco/santa/entity/nutcracker/2",
+                "three": "textures/mco/santa/entity/nutcracker/3"
+            },
             "materials": { "default": "entity_alphatest" },
 
             "scripts": {
                 "initialize": [
                     "variable.nutcracker_has_target = 0.0;",
+                    "variable.skin_variant = 0.0;",
+
                     "variable.attackbodyroty = 0.0;"
                 ],
                 "pre_animation": [
                     "variable.nutcracker_has_target = query.property('mco_santa:entity.has_target');",
+                    "variable.skin_variant = query.property('mco_santa:nutcracker.skin_variant');",
+
                     "variable.attackbodyroty = Math.sin(Math.sqrt(variable.attack_time) * 360.0) * 11.46;"
                 ],
 
