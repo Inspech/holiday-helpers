@@ -1,6 +1,5 @@
-import { BlockPermutation, EffectTypes, EffectType, world, system } from "@minecraft/server"
+import { world } from "@minecraft/server"
 
-import { fireplaceBlockConfig } from "../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../0config/blocks/chimney.js"
 import { lanternsBlockConfig } from "../0config/blocks/lanterns.js"
 
@@ -26,7 +25,6 @@ world.afterEvents.playerBreakBlock.subscribe((event) => {
     // If the block *below* the destroyed block is a Chimney
     if (originBlock.below() != undefined && originBlock.below().typeId == chimneyBlockConfig.blockID) {
         const belowBlock = originBlock.below(), belowBlockPermutation = belowBlock.permutation
-        const originBlockChimneyShape = originBlockPermutation.getState(chimneyBlockConfig.blockShapeState)
 
         // Set the block below to a Chimney Top
         belowBlock.setPermutation(belowBlockPermutation.withState(
@@ -35,7 +33,7 @@ world.afterEvents.playerBreakBlock.subscribe((event) => {
     }
 
     // 
-    if (originBlock.below() != undefined && lanternsBlockConfig.blockIDs.includes(originBlock.below().typeId)) {
+    if (originBlock.below() != undefined && lanternsBlockConfig.blockIDs.includes(`${originBlock.below().typeId}.block`)) {
         const belowBlock = originBlock.below(), belowBlockLocation = belowBlock.location, belowBlockPermutation = belowBlock.permutation
         const belowBlockHangingState = belowBlockPermutation.getState(lanternsBlockConfig.blockHangingState)
 
@@ -44,7 +42,7 @@ world.afterEvents.playerBreakBlock.subscribe((event) => {
         }
     }
     // 
-    if (originBlock.above() != undefined && lanternsBlockConfig.blockIDs.includes(originBlock.above().typeId)) {
+    if (originBlock.above() != undefined && lanternsBlockConfig.blockIDs.includes(`${originBlock.above().typeId}.block`)) {
         const aboveBlock = originBlock.above(), aboveBlockLocation = aboveBlock.location, aboveBlockPermutation = aboveBlock.permutation
         const aboveBlockHangingState = aboveBlockPermutation.getState(lanternsBlockConfig.blockHangingState)
 
