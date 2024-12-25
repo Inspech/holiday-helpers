@@ -19,5 +19,4 @@ export function presentOpenedEvent(block, permutation) {
     if (assignedLootTable) { blockDimension.runCommand(`loot spawn ${commandPosition} loot "${assignedLootTable}"`) }
 
     blockDimension.runCommand(`setblock ${commandPosition} air destroy`)
-    console.warn(permutation.type.id)
 }
