@@ -25,7 +25,7 @@ export default {
             case 'Down':
                 targetBlock.setPermutation(
                     BlockPermutation.resolve(
-                        item.typeId, {
+                        `${item.typeId}.block`, {
                         [lanternsBlockConfig.blockHangingState]: true
                     })
                 )
@@ -39,7 +39,7 @@ export default {
                 ) {
                     targetBlock.setPermutation(
                         BlockPermutation.resolve(
-                            item.typeId, {
+                            `${item.typeId}.block`, {
                             [lanternsBlockConfig.blockHangingState]: false
                         })
                     );
@@ -52,7 +52,7 @@ export default {
                 ) {
                     targetBlock.setPermutation(
                         BlockPermutation.resolve(
-                            item.typeId, {
+                            `${item.typeId}.block`, {
                             [lanternsBlockConfig.blockHangingState]: true
                         })
                     );
