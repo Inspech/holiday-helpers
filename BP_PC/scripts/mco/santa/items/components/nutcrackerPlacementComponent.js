@@ -33,7 +33,13 @@ export default {
         const itemDamage = item.getComponent(ItemComponentTypes.Durability).damage
         const healthToSet = entityHealthComponent.effectiveMax - itemDamage
 
+        const skinVariant = item.getDynamicProperty('mco_santa:nutcracker.skin_variant')
+
         entityToSpawn.setDynamicProperty('mco_santa:nutcracker.initial_rotation', entityRotation)
+
+        if (skinVariant != undefined) {
+            entityToSpawn.setProperty('mco_santa:nutcracker.skin_variant', skinVariant)
+        } else entityToSpawn.setProperty('mco_santa:nutcracker.skin_variant', Math.round(Math.random() * 3))
 
         entityHealthComponent.setCurrentValue(healthToSet)
         spawnedEntityTameComponent.tame(source)

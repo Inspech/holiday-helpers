@@ -27,10 +27,15 @@ export function nutcrackerAlignToHomeBlockEvent(entity) {
         z: entityHomeLocation.z
     })
 
+    const rotationProperty = entity.getDynamicProperty('mco_santa:nutcracker.initial_rotation')
+
+    let yRotation = 0
+    if (rotationProperty != undefined) yRotation = rotationProperty
+
     entity.setRotation(
         {
             x: 0,
-            y: entity.getDynamicProperty('mco_santa:nutcracker.initial_rotation')
+            y: yRotation
         }
     )
 }
@@ -40,11 +45,13 @@ export function nutcrackerAlignToHomeBlockEvent(entity) {
 export function nutcrackerTurnIntoItemEvent(entity) {
     const entityDimension = entity.dimension, entityLocation = entity.location
 
-    const entityHealthComponent = entity.getComponent(EntityComponentTypes.Health)
-    const currentHealth = entityHealthComponent.currentValue, maxHealth = entityHealthComponent.effectiveMax
+    const entityHealthComponent = entity.getComponent(EntityComponentTypes.Health),
+        currentHealth = entityHealthComponent.currentValue, maxHealth = entityHealthComponent.effectiveMax
+    const entitySkinVariant = entity.getProperty('mco_santa:nutcracker.skin_variant')
 
     const droppedItem = new ItemStack(nutcrackerEntityConfig.entityID, 1)
     droppedItem.getComponent(ItemComponentTypes.Durability).damage = maxHealth - currentHealth
+    droppedItem.setDynamicProperty('mco_santa:nutcracker.skin_variant', entitySkinVariant)
 
     entityDimension.spawnItem(droppedItem, entityLocation)
 
