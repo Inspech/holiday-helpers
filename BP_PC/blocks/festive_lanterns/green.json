@@ -2,7 +2,7 @@
     "format_version": "1.21.51",
     "minecraft:block": {
         "description": {
-            "identifier": "mco_santa:green_ornament",
+            "identifier": "mco_santa:green_festive_lantern",
             "menu_category": {
                 "category": "none",
                 "is_hidden_in_commands": true
@@ -14,35 +14,33 @@
         },
 
         "components": {
-            "minecraft:light_dampening": 0, "minecraft:light_emission": 4,
-            "minecraft:map_color": "#d82525",
+            "minecraft:light_dampening": 0, "minecraft:light_emission": 15,
+            "minecraft:map_color": "#5c3e30",
 
             "minecraft:geometry": {
-                "identifier": "geometry.mco_santa.ornament.ground",
+                "identifier": "geometry.mco_santa.lantern.ground",
                 "culling": "mco_santa:lantern"
             },
             "minecraft:material_instances": {
-                "down": { "texture": "mco_santa:ornament.green.particle", "render_method": "alpha_test" },
+                "down": { "texture": "mco_santa:festive_lantern.particle", "render_method": "alpha_test" },
                 "hook": {
                     "ambient_occlusion": false, "face_dimming": false,
-                    "texture": "mco_santa:ornament.green", "render_method": "alpha_test"
+                    "texture": "mco_santa:festive_lantern.green", "render_method": "alpha_test"
                 },
                 "*": {
-                    "ambient_occlusion": true, "face_dimming": true,
-                    "texture": "mco_santa:ornament.green", "render_method": "alpha_test"
+                    "ambient_occlusion": false, "face_dimming": false,
+                    "texture": "mco_santa:festive_lantern.green", "render_method": "alpha_test"
                 }
             },
 
             "minecraft:collision_box": {
-                "origin": [ -4, 0, -4 ],
-                "size": [ 8, 8, 8 ]
+                "origin": [ -3, 0, -3 ],
+                "size": [ 6, 8, 6 ]
             },
             "minecraft:selection_box": {
-                "origin": [ -4, 0, -4 ],
-                "size": [ 8, 8, 8 ]
+                "origin": [ -3, 0, -3 ],
+                "size": [ 6, 8, 6 ]
             },
-
-            // "minecraft:loot": "loot_tables/mco/santa/blocks/ornaments/green.json",
 
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 0 },
 
@@ -54,16 +52,16 @@
                 "condition": "query.block_state('mco_santa:block.is_hanging')",
                 "components": {
                     "minecraft:geometry": {
-                        "identifier": "geometry.mco_santa.ornament.hanging"
+                        "identifier": "geometry.mco_santa.lantern.hanging"
                     },
 
                     "minecraft:collision_box": {
-                        "origin": [ -4, 4, -4 ],
-                        "size": [ 8, 8, 8 ]
+                        "origin": [ -3, 2, -3 ],
+                        "size": [ 6, 8, 6 ]
                     },
                     "minecraft:selection_box": {
-                        "origin": [ -4, 4, -4 ],
-                        "size": [ 8, 8, 8 ]
+                        "origin": [ -3, 2, -3 ],
+                        "size": [ 6, 8, 6 ]
                     }
                 }
             }

@@ -28,10 +28,13 @@
                             "name": "mco_santa:itemGroup.name.ornaments"
                         },
                         "items": [
-                            "mco_santa:blue_present",
-                            "mco_santa:green_present",
-                            "mco_santa:purple_present",
-                            "mco_santa:red_present"
+                            "mco_santa:blue_ornament",
+                            "mco_santa:creeper_ornament",
+                            "mco_santa:green_ornament",
+                            "mco_santa:purple_ornament",
+                            "mco_santa:red_ornament",
+                            "mco_santa:snowman_ornament",
+                            "mco_santa:star_ornament"
                         ]
                     }
                 ]

@@ -11,7 +11,7 @@
                 "textures": { "default": "mco_santa:ornament.purple" }
             },
 
-            "minecraft:custom_components": [ "mco_santa:ornament.placement" ],
+            "minecraft:custom_components": [ "mco_santa:lantern.placement" ],
 
             "minecraft:tags": {
                 "tags": [ "mco_santa:ornaments" ]

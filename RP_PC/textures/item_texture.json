@@ -3,15 +3,25 @@
     "texture_name": "atlas.items",
 
     "texture_data": {
+        // Food Items
         "mco_santa:candy_cane": { "textures": "textures/mco/santa/items/candy_cane" },
         "mco_santa:eggnog": { "textures": "textures/mco/santa/items/eggnog" },
         "mco_santa:gingerbread_cookie": { "textures": "textures/mco/santa/items/gingerbread_cookie" },
         "mco_santa:hot_cocoa": { "textures": "textures/mco/santa/items/hot_cocoa" },
 
+        // Festive Lanterns
+        "mco_santa:festive_lantern.default": { "textures": "textures/mco/santa/items/festive_lantern/default" },
+        "mco_santa:festive_lantern.green": { "textures": "textures/mco/santa/items/festive_lantern/green" },
+        "mco_santa:festive_lantern.red": { "textures": "textures/mco/santa/items/festive_lantern/red" },
+
+        // Ornaments
         "mco_santa:ornament.blue": { "textures": "textures/mco/santa/items/ornament/blue" },
+        "mco_santa:ornament.creeper": { "textures": "textures/mco/santa/items/ornament/creeper" },
         "mco_santa:ornament.green": { "textures": "textures/mco/santa/items/ornament/green" },
         "mco_santa:ornament.purple": { "textures": "textures/mco/santa/items/ornament/purple" },
         "mco_santa:ornament.red": { "textures": "textures/mco/santa/items/ornament/red" },
+        "mco_santa:ornament.snowman": { "textures": "textures/mco/santa/items/ornament/snowman" },
+        "mco_santa:ornament.star": { "textures": "textures/mco/santa/items/ornament/star" },
 
         "mco_santa:nutcracker": { "textures": "textures/mco/santa/items/spawn_eggs/nutcracker" },
         "mco_santa:spawn_egg": {

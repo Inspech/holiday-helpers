@@ -19,7 +19,7 @@
 
             "minecraft:geometry": {
                 "identifier": "geometry.mco_santa.ornament.ground",
-                "culling": "mco_santa:ornament"
+                "culling": "mco_santa:lantern"
             },
             "minecraft:material_instances": {
                 "down": { "texture": "mco_santa:ornament.purple.particle", "render_method": "alpha_test" },

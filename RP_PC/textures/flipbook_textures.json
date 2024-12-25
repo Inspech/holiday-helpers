@@ -5,5 +5,21 @@
 		"atlas_index": 0,
 		"blend_frames": true,
 		"ticks_per_frame": 7
+	},
+
+	{
+		"flipbook_texture": "textures/mco/santa/blocks/festive_lantern/default",
+		"atlas_tile": "mco_santa:festive_lantern.default",
+		"ticks_per_frame": 8
+	},
+	{
+		"flipbook_texture": "textures/mco/santa/blocks/festive_lantern/green",
+		"atlas_tile": "mco_santa:festive_lantern.green",
+		"ticks_per_frame": 8
+	},
+	{
+		"flipbook_texture": "textures/mco/santa/blocks/festive_lantern/red",
+		"atlas_tile": "mco_santa:festive_lantern.red",
+		"ticks_per_frame": 8
 	}
 ]

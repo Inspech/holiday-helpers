@@ -1,0 +1,21 @@
+{
+	"pools": [
+		{
+			"rolls": 4,
+			"entries": [
+				{
+					"name": "mco_santa:festive_lantern",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:green_festive_lantern",
+					"type": "item", "weight": 1, "count": 1
+				},
+				{
+					"name": "mco_santa:red_festive_lantern",
+					"type": "item", "weight": 1, "count": 1
+				}
+			]
+		}
+	]
+}

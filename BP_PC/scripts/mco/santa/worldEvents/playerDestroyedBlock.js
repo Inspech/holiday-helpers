@@ -2,7 +2,7 @@ import { BlockPermutation, EffectTypes, EffectType, world, system } from "@minec
 
 import { fireplaceBlockConfig } from "../0config/blocks/fireplace.js"
 import { chimneyBlockConfig } from "../0config/blocks/chimney.js"
-import { ornamentBlockConfig } from "../0config/blocks/ornament.js"
+import { lanternsBlockConfig } from "../0config/blocks/lanterns.js"
 
 // NOTE: No, I do not want to update other Chimney blocks to turn into Chimney Tops when breaking one above.
 
@@ -35,18 +35,18 @@ world.afterEvents.playerBreakBlock.subscribe((event) => {
     }
 
     // 
-    if (originBlock.below() != undefined && ornamentBlockConfig.blockIDs.includes(originBlock.below().typeId)) {
+    if (originBlock.below() != undefined && lanternsBlockConfig.blockIDs.includes(originBlock.below().typeId)) {
         const belowBlock = originBlock.below(), belowBlockLocation = belowBlock.location, belowBlockPermutation = belowBlock.permutation
-        const belowBlockHangingState = belowBlockPermutation.getState(ornamentBlockConfig.blockHangingState)
+        const belowBlockHangingState = belowBlockPermutation.getState(lanternsBlockConfig.blockHangingState)
 
         if (belowBlockHangingState == true) {
             belowBlock.dimension.runCommand(`setblock ${belowBlockLocation.x} ${belowBlockLocation.y} ${belowBlockLocation.z} air destroy`)
         }
     }
     // 
-    if (originBlock.above() != undefined && ornamentBlockConfig.blockIDs.includes(originBlock.above().typeId)) {
+    if (originBlock.above() != undefined && lanternsBlockConfig.blockIDs.includes(originBlock.above().typeId)) {
         const aboveBlock = originBlock.above(), aboveBlockLocation = aboveBlock.location, aboveBlockPermutation = aboveBlock.permutation
-        const aboveBlockHangingState = aboveBlockPermutation.getState(ornamentBlockConfig.blockHangingState)
+        const aboveBlockHangingState = aboveBlockPermutation.getState(lanternsBlockConfig.blockHangingState)
 
         if (aboveBlockHangingState == false) {
             aboveBlock.dimension.runCommand(`setblock ${aboveBlockLocation.x} ${aboveBlockLocation.y} ${aboveBlockLocation.z} air destroy`)

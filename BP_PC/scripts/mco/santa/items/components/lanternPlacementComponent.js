@@ -4,13 +4,13 @@ import { BlockPermutation } from '@minecraft/server'
 
 import { replaceableBlocks } from '../../../0data/vanilla.js'
 
-import { ornamentBlockConfig } from "../../0config/blocks/ornament.js"
+import { lanternsBlockConfig } from "../../0config/blocks/lanterns.js"
 import { getTargetBlockFromFace, playSoundOnBlockItemPlacement } from "../../../0utilities/blockFunctions.js"
 
-/** Special placement considerations for the Ornament block
+/** Special placement considerations for the Lantern-type blocks
  * @type {ItemCustomComponentRegistration} **/
 export default {
-    ID: "mco_santa:ornament.placement",
+    ID: "mco_santa:lantern.placement",
 
     onUseOn(event) {
         const block = event.block, blockFace = event.blockFace
@@ -26,7 +26,7 @@ export default {
                 targetBlock.setPermutation(
                     BlockPermutation.resolve(
                         item.typeId, {
-                        [ornamentBlockConfig.blockHangingState]: true
+                        [lanternsBlockConfig.blockHangingState]: true
                     })
                 )
                 playSoundOnBlockItemPlacement(item, source); break
@@ -40,7 +40,7 @@ export default {
                     targetBlock.setPermutation(
                         BlockPermutation.resolve(
                             item.typeId, {
-                            [ornamentBlockConfig.blockHangingState]: false
+                            [lanternsBlockConfig.blockHangingState]: false
                         })
                     );
                     playSoundOnBlockItemPlacement(item, source)
@@ -53,7 +53,7 @@ export default {
                     targetBlock.setPermutation(
                         BlockPermutation.resolve(
                             item.typeId, {
-                            [ornamentBlockConfig.blockHangingState]: true
+                            [lanternsBlockConfig.blockHangingState]: true
                         })
                     );
                     playSoundOnBlockItemPlacement(item, source)

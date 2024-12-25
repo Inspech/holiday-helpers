@@ -2,13 +2,13 @@
     "format_version": "1.21.51",
     "minecraft:item": {
         "description": {
-            "identifier": "mco_santa:red_ornament",
+            "identifier": "mco_santa:snowman_ornament",
             "menu_category": { "category": "items" }
         },
 
         "components": {
             "minecraft:icon": {
-                "textures": { "default": "mco_santa:ornament.red" }
+                "textures": { "default": "mco_santa:ornament.snowman" }
             },
 
             "minecraft:custom_components": [ "mco_santa:lantern.placement" ],

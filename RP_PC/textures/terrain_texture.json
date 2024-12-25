@@ -45,14 +45,26 @@
         // Chimney
         "mco_santa:chimney": { "textures": "textures/mco/santa/blocks/chimney" },
 
+        // Festive Lantern
+        "mco_santa:festive_lantern.particle": { "textures": "textures/mco/santa/blocks/festive_lantern/particle" },
+        "mco_santa:festive_lantern.default": { "textures": "textures/mco/santa/blocks/festive_lantern/default" },
+        "mco_santa:festive_lantern.green": { "textures": "textures/mco/santa/blocks/festive_lantern/green" },
+        "mco_santa:festive_lantern.red": { "textures": "textures/mco/santa/blocks/festive_lantern/red" },
+
         // Ornaments
         "mco_santa:ornament.blue": { "textures": "textures/mco/santa/blocks/ornament/blue" },
         "mco_santa:ornament.blue.particle": { "textures": "textures/mco/santa/blocks/ornament/blue.particle" },
+        "mco_santa:ornament.creeper": { "textures": "textures/mco/santa/blocks/ornament/creeper" },
+        "mco_santa:ornament.creeper.particle": { "textures": "textures/mco/santa/blocks/ornament/creeper.particle" },
         "mco_santa:ornament.green": { "textures": "textures/mco/santa/blocks/ornament/green" },
         "mco_santa:ornament.green.particle": { "textures": "textures/mco/santa/blocks/ornament/green.particle" },
         "mco_santa:ornament.purple": { "textures": "textures/mco/santa/blocks/ornament/purple" },
         "mco_santa:ornament.purple.particle": { "textures": "textures/mco/santa/blocks/ornament/purple.particle" },
         "mco_santa:ornament.red": { "textures": "textures/mco/santa/blocks/ornament/red" },
-        "mco_santa:ornament.red.particle": { "textures": "textures/mco/santa/blocks/ornament/red.particle" }
+        "mco_santa:ornament.red.particle": { "textures": "textures/mco/santa/blocks/ornament/red.particle" },
+        "mco_santa:ornament.snowman": { "textures": "textures/mco/santa/blocks/ornament/snowman" },
+        "mco_santa:ornament.snowman.particle": { "textures": "textures/mco/santa/blocks/ornament/snowman.particle" },
+        "mco_santa:ornament.star": { "textures": "textures/mco/santa/blocks/ornament/star" },
+        "mco_santa:ornament.star.particle": { "textures": "textures/mco/santa/blocks/ornament/star.particle" }
     }
 }

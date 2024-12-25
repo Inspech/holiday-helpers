@@ -1,7 +1,7 @@
 {
     "format_version": "1.21.51",
     "minecraft:block_culling_rules": {
-        "description": { "identifier": "mco_santa:ornament" },
+        "description": { "identifier": "mco_santa:lantern" },
 
         "rules": [
             {

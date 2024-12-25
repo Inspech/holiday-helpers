@@ -3,12 +3,12 @@
 
 import { world } from "@minecraft/server"
 
-import ornamentPlacementComponent from "./components/ornamentPlacementComponent.js"
 import nutcrackerPlacementComponent from "./components/nutcrackerPlacementComponent.js"
 import foodItemConsumptionComponent from "./components/foodItemConsumptionComponent.js"
+import lanternPlacementComponent from "./components/lanternPlacementComponent.js"
 
 const customComponents = [
-    ornamentPlacementComponent,
+    lanternPlacementComponent,
     nutcrackerPlacementComponent,
     foodItemConsumptionComponent
 ]
