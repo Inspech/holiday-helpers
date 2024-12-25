@@ -9,7 +9,7 @@ export default {
     ID: "mco_santa:present.interaction",
 
     onPlayerInteract(event) {
-        const block = event.block
-        presentOpenedEvent(block)
+        const block = event.block, blockPermutation = block.permutation
+        presentOpenedEvent(block, blockPermutation)
     }
 }
